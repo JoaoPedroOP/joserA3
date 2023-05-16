@@ -153,7 +153,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5583963838507751173
 RectTransform:
   m_ObjectHideFlags: 0
@@ -509,7 +509,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 3.610794, y: -0.000010756428}
-  m_SizeDelta: {x: 450.8199, y: 0}
+  m_SizeDelta: {x: 450.8199, y: 175}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &5583963839217369528
 MonoBehaviour:
@@ -684,7 +684,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8853713983965063878, guid: 5d79fa0fdcd9d9843b0eec3aefa872c5, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4279111182
+      value: 1846414862
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d79fa0fdcd9d9843b0eec3aefa872c5, type: 3}
@@ -707,6 +707,10 @@ PrefabInstance:
     - target: {fileID: 2535935508442438619, guid: 5d79fa0fdcd9d9843b0eec3aefa872c5, type: 3}
       propertyPath: m_Name
       value: AcidWater
+      objectReference: {fileID: 0}
+    - target: {fileID: 2889273127231583197, guid: 5d79fa0fdcd9d9843b0eec3aefa872c5, type: 3}
+      propertyPath: m_Interactable
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5752704566001761423, guid: 5d79fa0fdcd9d9843b0eec3aefa872c5, type: 3}
       propertyPath: m_Pivot.x
@@ -818,7 +822,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8853713983965063878, guid: 5d79fa0fdcd9d9843b0eec3aefa872c5, type: 3}
       propertyPath: m_fontColor.a
-      value: 1
+      value: 0.43137255
       objectReference: {fileID: 0}
     - target: {fileID: 8853713983965063878, guid: 5d79fa0fdcd9d9843b0eec3aefa872c5, type: 3}
       propertyPath: m_fontColor.b
@@ -838,7 +842,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8853713983965063878, guid: 5d79fa0fdcd9d9843b0eec3aefa872c5, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4279111182
+      value: 1846414862
       objectReference: {fileID: 0}
     - target: {fileID: 9038289695568348796, guid: 5d79fa0fdcd9d9843b0eec3aefa872c5, type: 3}
       propertyPath: m_SizeDelta.x
@@ -992,7 +996,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8853713983965063878, guid: 5d79fa0fdcd9d9843b0eec3aefa872c5, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4279111182
+      value: 1846414862
       objectReference: {fileID: 0}
     - target: {fileID: 9038289695568348796, guid: 5d79fa0fdcd9d9843b0eec3aefa872c5, type: 3}
       propertyPath: m_SizeDelta.x
@@ -1148,7 +1152,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8853713983965063878, guid: 5d79fa0fdcd9d9843b0eec3aefa872c5, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4279111182
+      value: 1846414862
       objectReference: {fileID: 0}
     - target: {fileID: 9038289695568348796, guid: 5d79fa0fdcd9d9843b0eec3aefa872c5, type: 3}
       propertyPath: m_SizeDelta.x
