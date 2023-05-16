@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
     public GameObject bankOfResources;
-    public GameObject infoTab;
+    public Image infoTab;
+    public Text infoText;
     private Image bankImage;
 
 
@@ -14,7 +16,8 @@ public class GameController : MonoBehaviour
     void Start()
     {
         //Info Tab is hidden
-        this.infoTab.SetActive(false);
+        this.infoTab.enabled = false;
+        this.infoText.enabled = false;
 
         //renderer of the bank
         bankImage = this.bankOfResources.GetComponent<Image>();
@@ -44,13 +47,15 @@ public class GameController : MonoBehaviour
 
     public IEnumerator ShowInfo(string text)
     {
-        this.infoTab.SetActive(true);
+        this.infoTab.enabled = true;
+        this.infoText.enabled = true;
         var infoText = this.infoTab.GetComponentInChildren<Text>();
         infoText.text = text;
 
         // Wait for 1.5 seconds
         yield return new WaitForSeconds(1.5f);
-        this.infoTab.SetActive(false);
+        this.infoTab.enabled = false;
+        this.infoText.enabled = false;
     }
 
 }
