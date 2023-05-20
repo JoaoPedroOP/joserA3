@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -8,13 +9,21 @@ using Random = UnityEngine.Random;
 public class QuizzManager : MonoBehaviour
 {
     public List<QuestionAndAnswer> QuestionAndAnswers;
+    public GameObject questionTab;
     public GameObject[] options;
+    public GameObject responseInformation;
     public int currentQuestionIndex;
+    public int index = 0;
+    public int questionsRight = 0;
 
     public Text QuestionText;
 
+    public ParticleSystem Rain;
+
     private void Start()
     {
+        this.Rain.Stop();
+        responseInformation.SetActive(false);
         //controll to define when to generate the questions
         generateQuestion();
     }
@@ -24,8 +33,8 @@ public class QuizzManager : MonoBehaviour
         //only generate questions if there's one available
         if (QuestionAndAnswers.Count > 0)
         {
-            //for now the question is random picked 
-            currentQuestionIndex = Random.Range(0, QuestionAndAnswers.Count);
+            //as the current question is used and it's erased, no need to update index
+            currentQuestionIndex = index;
 
             QuestionText.text = QuestionAndAnswers[currentQuestionIndex].Question;
 
@@ -54,9 +63,49 @@ public class QuizzManager : MonoBehaviour
     }
 
     //method to generate the next question
-    public void correct()
+    public void Correct()
     {
         QuestionAndAnswers.RemoveAt(currentQuestionIndex);
         generateQuestion();
+    }
+
+    public IEnumerator ShowInfoAboutQuestion()
+    {
+        //hide question tab and answer buttons
+        ShowquestionTabAndAnswerBtns(false);
+
+        //show the information associated to the answer;
+        responseInformation.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text
+            = QuestionAndAnswers[index].AnswerInformation;
+
+        // Wait for 4 seconds
+        yield return new WaitForSeconds(4f);
+
+        //enable the question tab and answer buttons
+        ShowquestionTabAndAnswerBtns(true); 
+    }
+
+    public void ShowquestionTabAndAnswerBtns(bool state)
+    {
+        responseInformation.SetActive(!state);
+
+        questionTab.GetComponent<Image>().enabled = state;
+        questionTab.GetComponentInChildren<Text>().enabled = state;
+
+        for (int i = 0; i < options.Length; i++)
+        {
+            this.options[i].GetComponent<Image>().enabled = state;
+            this.options[i].GetComponentInChildren<TextMeshProUGUI>().enabled = state;
+        }
+    }
+
+    public IEnumerator MakeRain()
+    {
+        this.Rain.Play();
+        // Wait for 3 seconds
+        yield return new WaitForSeconds(3f);
+        this.Rain.Stop();
+
+        //give acid Rain Resources
     }
 }

@@ -12,12 +12,24 @@ public class AnswerScript : MonoBehaviour
         if (isCorrect)
         {
             Debug.Log("Correct Answer!");
-            quizzManager.correct();
+
+            quizzManager.questionsRight++;
+
+            //if the first question is correct
+            if (quizzManager.questionsRight == 1)
+            {
+                //enable rain for some seconds
+                StartCoroutine(quizzManager.MakeRain());
+            }
+
+            StartCoroutine(quizzManager.ShowInfoAboutQuestion());
+
+            quizzManager.Correct();
         }
         else
         {
             Debug.Log("Wrong Answer!");
-            quizzManager.correct();
+            quizzManager.Correct();
         }
     }
 }
