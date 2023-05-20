@@ -856,6 +856,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1164230663374866617, guid: 4d58f4b97278188468d5c1e45b18ca2d, type: 3}
   m_PrefabInstance: {fileID: 1164230663831448112}
   m_PrefabAsset: {fileID: 0}
+--- !u!225 &1359402101 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 3790723062832271099, guid: 56fe320021b10024ab702b2033b22c9c, type: 3}
+  m_PrefabInstance: {fileID: 976418389}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1657157922 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5583963838507751169, guid: 56fe320021b10024ab702b2033b22c9c, type: 3}
@@ -1468,6 +1473,10 @@ PrefabInstance:
       propertyPath: QuestionText
       value: 
       objectReference: {fileID: 1117120299}
+    - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
+      propertyPath: acidWaterResource
+      value: 
+      objectReference: {fileID: 1359402101}
     - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
       propertyPath: responseInformation
       value: 
