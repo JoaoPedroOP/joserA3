@@ -1,6 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.Resources;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,11 +11,14 @@ public class GameController : MonoBehaviour
     private Image bankImage;
     public CanvasGroup seedResource;
     public CanvasGroup mineralsResource;
-    //public Button seedBtnResource;
+    public GameObject quizz;
+    public ParticleSystem Rain;
 
     // Start is called before the first frame update
     void Start()
     {
+        this.Rain.Stop();
+
         //Info Tab is hidden
         this.infoTab.enabled = false;
         this.infoText.enabled = false;
@@ -25,6 +26,16 @@ public class GameController : MonoBehaviour
 
         //renderer of the bank
         bankImage = this.bankOfSeeds.GetComponent<Image>();
+
+        // quizzes
+        quizz.SetActive(false);
+        StartCoroutine(ShowQuizz());
+    }
+
+    public IEnumerator ShowQuizz()
+    {
+        yield return new WaitForSeconds(5f);
+        quizz.SetActive(true);
     }
 
     public void clickBankOfResources()
@@ -62,5 +73,4 @@ public class GameController : MonoBehaviour
         this.infoTab.enabled = false;
         this.infoText.enabled = false;
     }
-
 }
