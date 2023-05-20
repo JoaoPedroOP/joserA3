@@ -3,6 +3,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Image = UnityEngine.UI.Image;
 
 public class GameController : MonoBehaviour
 {
@@ -38,6 +39,47 @@ public class GameController : MonoBehaviour
         // quizzes
         quizz.SetActive(false);
         StartCoroutine(ShowQuizz());
+    }
+
+    private void Update()
+    {
+        var plantBtn = plantations.GetComponentInChildren<Button>();
+        var plantBtnImage = plantBtn.GetComponentInChildren<UnityEngine.UI.Image>();
+
+        var plantationsBtnAndIcos = plantations.transform.GetChild(0).GetComponent<UnityEngine.UI.Image>();
+
+        if (!hasPlantResources())
+        {
+            plantBtn.enabled = false;
+            Color currentColor = plantBtnImage.color;
+            currentColor.a = 0.5f;
+            plantBtnImage.color = currentColor;
+        }
+        else
+        {
+            plantBtn.enabled = true;
+            Color currentColor = plantBtnImage.color;
+            currentColor.a = 1f;
+            plantBtnImage.color = currentColor;
+        }
+    }
+
+    private bool hasPlantResources()
+    {
+        int seedValue = 1;
+        int acidWaterValue = 5;
+
+        var currentAcidWater = ResourceManager.Instance.
+            GetResourceByType(ResourceType.AcidWater);
+        var currentSeeds = ResourceManager.Instance.
+            GetResourceByType(ResourceType.Seeds);
+
+        if(currentAcidWater.Quantity >= acidWaterValue && currentSeeds.Quantity >= seedValue)
+        {
+            return true;
+        }
+
+        return false;
     }
 
     public IEnumerator ShowQuizz()
@@ -104,11 +146,5 @@ public class GameController : MonoBehaviour
         float x = UnityEngine.Random.Range(-10f, 870f); 
         float y = UnityEngine.Random.Range(0f, 470f);
         return new Vector2(x, y);
-    }
-    private float GetRandomScale()
-    {
-        float minScale = scaleRange.x;
-        float maxScale = scaleRange.y;
-        return UnityEngine.Random.Range(minScale, maxScale);
     }
 }
