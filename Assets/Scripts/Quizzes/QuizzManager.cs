@@ -19,6 +19,8 @@ public class QuizzManager : MonoBehaviour
     public Text QuestionText;
 
     public ParticleSystem Rain;
+    public int acidRainValue = 25;
+    public CanvasGroup acidWaterResource;
 
     private void Start()
     {
@@ -107,5 +109,10 @@ public class QuizzManager : MonoBehaviour
         this.Rain.Stop();
 
         //give acid Rain Resources
+        // updating the acid rain quantity and enabling the resource on the manager
+        acidWaterResource.alpha = 1f;
+        var newQuantity = ResourceManager.Instance.UpdateByName(ResourceType.AcidWater, acidRainValue);
+        var acidWaterQuantityText = acidWaterResource.GetComponentsInChildren<TMP_Text>();
+        acidWaterQuantityText[1].text = $"{newQuantity}";
     }
 }
