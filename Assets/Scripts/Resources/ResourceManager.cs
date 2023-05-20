@@ -39,7 +39,7 @@ public class ResourceManager : MonoBehaviour
 
     public int UpdateByName(ResourceType type, int quantity)
     {
-        var existingResource = Resources.FirstOrDefault(r => r.Type == type);
+        var existingResource = this.GetResourceByType(type);
 
         existingResource.Quantity += quantity;
         SetActiveResource(existingResource);
@@ -50,5 +50,10 @@ public class ResourceManager : MonoBehaviour
     public void SetActiveResource(ResourceModel resource)
     {
         resource.IsActive = true;
+    }
+
+    public ResourceModel GetResourceByType(ResourceType type)
+    {
+        return Resources.FirstOrDefault(r => r.Type == type);
     }
 }

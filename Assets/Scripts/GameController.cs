@@ -13,7 +13,7 @@ public class GameController : MonoBehaviour
     private Image bankImage;
     public CanvasGroup seedResource;
     public CanvasGroup mineralsResource;
-    public Button seedBtnResource;
+    //public Button seedBtnResource;
 
     // Start is called before the first frame update
     void Start()
@@ -33,13 +33,15 @@ public class GameController : MonoBehaviour
 
         //message appears indicating that some resources were gained
         string text = "You gained " + seedValue + " Seeds!" + "\n" + "Good Luck!";
-        seedBtnResource.interactable = true;
 
         seedResource.alpha = 1f;
 
         // updating the seed quantity and enabling the resource on the manager
         var newQuantity = ResourceManager.Instance.UpdateByName(ResourceType.Seeds, seedValue);
         var seedQuantityText = seedResource.GetComponentsInChildren<TMP_Text>();
+        var seedBtnResource = seedResource.GetComponentInChildren<Button>();
+        seedBtnResource.interactable = true;
+
         seedQuantityText[1].text = $"{newQuantity}";
 
         // Disable the renderer to make the object invisible

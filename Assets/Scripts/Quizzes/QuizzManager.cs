@@ -102,17 +102,19 @@ public class QuizzManager : MonoBehaviour
     }
 
     public IEnumerator MakeRain()
-    {
-        this.Rain.Play();
-        // Wait for 3 seconds
-        yield return new WaitForSeconds(3f);
-        this.Rain.Stop();
-
+    {   
         //give acid Rain Resources
         // updating the acid rain quantity and enabling the resource on the manager
         acidWaterResource.alpha = 1f;
         var newQuantity = ResourceManager.Instance.UpdateByName(ResourceType.AcidWater, acidRainValue);
         var acidWaterQuantityText = acidWaterResource.GetComponentsInChildren<TMP_Text>();
+        var button = acidWaterResource.GetComponentInChildren<Button>();
+        button.interactable = true;
         acidWaterQuantityText[1].text = $"{newQuantity}";
+
+        this.Rain.Play();
+        // Wait for 3 seconds
+        yield return new WaitForSeconds(3f);
+        this.Rain.Stop();
     }
 }
