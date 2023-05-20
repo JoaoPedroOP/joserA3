@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -6,6 +7,9 @@ using UnityEngine.UI;
 public class GameController : MonoBehaviour
 {
     public GameObject bankOfSeeds;
+    public GameObject plantations;
+    public GameObject spawnedImagePrefab;
+
     public Image infoTab;
     public Text infoText;
     private Image bankImage;
@@ -13,6 +17,10 @@ public class GameController : MonoBehaviour
     public CanvasGroup mineralsResource;
     public GameObject quizz;
     public ParticleSystem Rain;
+    public CanvasGroup acidWaterResource;
+    //public Button seedBtnResource;
+
+    public Vector2 scaleRange = new Vector2(1f, 100f);
 
     // Start is called before the first frame update
     void Start()
@@ -72,5 +80,48 @@ public class GameController : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         this.infoTab.enabled = false;
         this.infoText.enabled = false;
+    }
+
+    public void clickPlantButton()
+    {
+        //consume 1 seed and 5 waters
+        int seedValue = -1;
+        int waterValue = -5;
+
+        //message appears indicating that some resources were spent
+        string text = "You Spent " + Math.Abs(seedValue) + " Seeds!" + "\n"
+            + "And "+ Math.Abs(waterValue) +" Waters!";
+
+        // updating the seed quantity on the manager
+        var newSeedQuantity = ResourceManager.Instance.UpdateByName(ResourceType.Seeds, seedValue);
+        var seedQuantityText = seedResource.GetComponentsInChildren<TMP_Text>();
+
+        seedQuantityText[1].text = $"{newSeedQuantity}";
+
+        var newWaterQuantity = ResourceManager.Instance.UpdateByName(ResourceType.AcidWater, waterValue);
+        var waterQuantityText = acidWaterResource.GetComponentsInChildren<TMP_Text>();
+
+        waterQuantityText[1].text = $"{newWaterQuantity}";
+
+        StartCoroutine(ShowInfo(text));
+
+        /////spawn the plant image randomly in the map
+        ///
+        Vector2 randomPosition = GetRandomPosition();
+        Instantiate(spawnedImagePrefab, randomPosition, Quaternion.identity,transform.parent);
+        
+    }
+
+    private Vector2 GetRandomPosition()
+    {
+        float x = UnityEngine.Random.Range(-10f, 870f); 
+        float y = UnityEngine.Random.Range(0f, 470f);
+        return new Vector2(x, y);
+    }
+    private float GetRandomScale()
+    {
+        float minScale = scaleRange.x;
+        float maxScale = scaleRange.y;
+        return UnityEngine.Random.Range(minScale, maxScale);
     }
 }
