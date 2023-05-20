@@ -1,10 +1,8 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using Random = UnityEngine.Random;
 
 public class QuizzManager : MonoBehaviour
 {
@@ -21,6 +19,7 @@ public class QuizzManager : MonoBehaviour
     public ParticleSystem Rain;
     public int acidRainValue = 25;
     public CanvasGroup acidWaterResource;
+    public Sprite acidRainBg;
 
     private void Start()
     {
@@ -68,7 +67,6 @@ public class QuizzManager : MonoBehaviour
     public void Correct()
     {
         QuestionAndAnswers.RemoveAt(currentQuestionIndex);
-        generateQuestion();
     }
 
     public IEnumerator ShowInfoAboutQuestion()
@@ -81,10 +79,7 @@ public class QuizzManager : MonoBehaviour
             = QuestionAndAnswers[index].AnswerInformation;
 
         // Wait for 4 seconds
-        yield return new WaitForSeconds(4f);
-
-        //enable the question tab and answer buttons
-        ShowquestionTabAndAnswerBtns(true); 
+        yield return new WaitForSeconds(5f);
     }
 
     public void ShowquestionTabAndAnswerBtns(bool state)
@@ -101,7 +96,7 @@ public class QuizzManager : MonoBehaviour
         }
     }
 
-    public IEnumerator MakeRain()
+    public IEnumerator MakeAcidRain()
     {   
         //give acid Rain Resources
         // updating the acid rain quantity and enabling the resource on the manager
@@ -111,6 +106,7 @@ public class QuizzManager : MonoBehaviour
         var button = acidWaterResource.GetComponentInChildren<Button>();
         button.interactable = true;
         acidWaterQuantityText[1].text = $"{newQuantity}";
+        GameObject.Find("Panel").GetComponent<Image>().sprite = acidRainBg;
 
         this.Rain.Play();
         // Wait for 3 seconds

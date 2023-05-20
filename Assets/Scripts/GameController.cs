@@ -66,20 +66,7 @@ public class GameController : MonoBehaviour
         // Disable the renderer to make the object invisible
         bankImage.enabled = false;
 
-        StartCoroutine(ShowInfo(text));
-    }
-
-    public IEnumerator ShowInfo(string text)
-    {
-        this.infoTab.enabled = true;
-        this.infoText.enabled = true;
-        var infoText = this.infoTab.GetComponentInChildren<Text>();
-        infoText.text = text;
-
-        // Wait for 1.5 seconds
-        yield return new WaitForSeconds(1.5f);
-        this.infoTab.enabled = false;
-        this.infoText.enabled = false;
+        StartCoroutine(InfoTabHelper.Instance.ShowInfo(text));
     }
 
     public void clickPlantButton()
@@ -103,7 +90,7 @@ public class GameController : MonoBehaviour
 
         waterQuantityText[1].text = $"{newWaterQuantity}";
 
-        StartCoroutine(ShowInfo(text));
+        StartCoroutine(InfoTabHelper.Instance.ShowInfo(text));
 
         /////spawn the plant image randomly in the map
         ///

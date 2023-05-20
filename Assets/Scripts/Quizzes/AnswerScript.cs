@@ -14,12 +14,13 @@ public class AnswerScript : MonoBehaviour
             Debug.Log("Correct Answer!");
 
             quizzManager.questionsRight++;
+            EnvConsciousnessManager.Instance.AddConsciousness(0.1f);
 
             //if the first question is correct
             if (quizzManager.questionsRight == 1)
             {
                 //enable rain for some seconds
-                StartCoroutine(quizzManager.MakeRain());
+                StartCoroutine(quizzManager.MakeAcidRain());
             }
 
             StartCoroutine(quizzManager.ShowInfoAboutQuestion());
