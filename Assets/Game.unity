@@ -128,7 +128,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
   m_PrefabInstance: {fileID: 1333959038453946861}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 506201939}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 27650034ff5a391468b297153ea53c47, type: 3}
@@ -354,11 +354,6 @@ GameObject:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1164230663678560367, guid: 4d58f4b97278188468d5c1e45b18ca2d, type: 3}
   m_PrefabInstance: {fileID: 1164230663831448112}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &506201939 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1333959038570668735, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
-  m_PrefabInstance: {fileID: 1333959038453946861}
   m_PrefabAsset: {fileID: 0}
 --- !u!224 &515342557 stripped
 RectTransform:
@@ -716,7 +711,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4008358094217887853, guid: 56fe320021b10024ab702b2033b22c9c, type: 3}
       propertyPath: m_fontColor.a
-      value: 1
+      value: 0.5019608
       objectReference: {fileID: 0}
     - target: {fileID: 4008358094217887853, guid: 56fe320021b10024ab702b2033b22c9c, type: 3}
       propertyPath: m_fontColor32.rgba
@@ -826,10 +821,6 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6404255863736444758, guid: 56fe320021b10024ab702b2033b22c9c, type: 3}
-      propertyPath: m_fontColor.a
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6404255863795270525, guid: 56fe320021b10024ab702b2033b22c9c, type: 3}
       propertyPath: m_text
       value: 10
@@ -897,7 +888,7 @@ MonoBehaviour:
   infoText: {fileID: 1827589155}
   seedResource: {fileID: 222760300}
   mineralsResource: {fileID: 1866982325}
-  quizzManager: {fileID: 506201939}
+  quizz: {fileID: 1164230663831448113}
   Rain: {fileID: 2129924935}
 --- !u!1001 &1726199902
 PrefabInstance:
@@ -1146,10 +1137,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Quizzes
       objectReference: {fileID: 0}
-    - target: {fileID: 1164230663742548716, guid: 4d58f4b97278188468d5c1e45b18ca2d, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1164230663742548717, guid: 4d58f4b97278188468d5c1e45b18ca2d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1380,6 +1367,11 @@ PrefabInstance:
       objectReference: {fileID: 152386387}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d58f4b97278188468d5c1e45b18ca2d, type: 3}
+--- !u!1 &1164230663831448113 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1164230663742548716, guid: 4d58f4b97278188468d5c1e45b18ca2d, type: 3}
+  m_PrefabInstance: {fileID: 1164230663831448112}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1333959038453946861
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1513,7 +1505,7 @@ PrefabInstance:
       objectReference: {fileID: 439646772}
     - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
       propertyPath: QuestionAndAnswers.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
       propertyPath: QuestionAndAnswers.Array.data[0].Question
@@ -1627,6 +1619,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2129924935}
     - target: {fileID: 1799480933201660225, guid: 8bb48de23cf1a6041bc7fe704614827f, type: 3}
+      propertyPath: quizz
+      value: 
+      objectReference: {fileID: 1164230663831448113}
+    - target: {fileID: 1799480933201660225, guid: 8bb48de23cf1a6041bc7fe704614827f, type: 3}
       propertyPath: infoTab
       value: 
       objectReference: {fileID: 623918674}
@@ -1638,10 +1634,6 @@ PrefabInstance:
       propertyPath: bankOfSeeds
       value: 
       objectReference: {fileID: 726400279}
-    - target: {fileID: 1799480933201660225, guid: 8bb48de23cf1a6041bc7fe704614827f, type: 3}
-      propertyPath: quizzManager
-      value: 
-      objectReference: {fileID: 506201939}
     - target: {fileID: 1799480933201660225, guid: 8bb48de23cf1a6041bc7fe704614827f, type: 3}
       propertyPath: seedResource
       value: 
@@ -1840,13 +1832,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2129924935}
     - target: {fileID: 5796013917938749825, guid: 103ff1680a7a5e344b8b625cfc9714c6, type: 3}
+      propertyPath: quizz
+      value: 
+      objectReference: {fileID: 1164230663831448113}
+    - target: {fileID: 5796013917938749825, guid: 103ff1680a7a5e344b8b625cfc9714c6, type: 3}
       propertyPath: bankOfSeeds
       value: 
       objectReference: {fileID: 726400279}
-    - target: {fileID: 5796013917938749825, guid: 103ff1680a7a5e344b8b625cfc9714c6, type: 3}
-      propertyPath: quizzManager
-      value: 
-      objectReference: {fileID: 506201939}
     - target: {fileID: 5796013917938749825, guid: 103ff1680a7a5e344b8b625cfc9714c6, type: 3}
       propertyPath: seedResource
       value: 
