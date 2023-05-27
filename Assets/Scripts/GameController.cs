@@ -19,7 +19,6 @@ public class GameController : MonoBehaviour
     public GameObject quizz;
     public ParticleSystem Rain;
     public CanvasGroup acidWaterResource;
-    //public Button seedBtnResource;
 
     public Vector2 scaleRange = new Vector2(1f, 100f);
 
@@ -45,8 +44,6 @@ public class GameController : MonoBehaviour
     {
         var plantBtn = plantations.GetComponentInChildren<Button>();
         var plantBtnImage = plantBtn.GetComponentInChildren<UnityEngine.UI.Image>();
-
-        var plantationsBtnAndIcos = plantations.transform.GetChild(0).GetComponent<UnityEngine.UI.Image>();
 
         if (!hasPlantResources())
         {
@@ -135,7 +132,6 @@ public class GameController : MonoBehaviour
         StartCoroutine(InfoTabHelper.Instance.ShowInfo(text));
 
         /////spawn the plant image randomly in the map
-        ///
         Vector2 randomPosition = GetRandomPosition();
         Instantiate(spawnedImagePrefab, randomPosition, Quaternion.identity,transform.parent);
         
