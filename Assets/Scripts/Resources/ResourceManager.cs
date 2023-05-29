@@ -16,18 +16,28 @@ public class ResourceManager : MonoBehaviour
         },
         new ResourceModel
         {
-            Id = 0,
+            Id = 1,
             Type = ResourceType.AcidWater,
         },
         new ResourceModel
         {
-            Id = 0,
+            Id = 2,
             Type = ResourceType.Seeds
         },
         new ResourceModel
         {
-            Id = 0,
+            Id = 3,
             Type = ResourceType.Wood
+        },
+        new ResourceModel
+        {
+            Id = 4,
+            Type = ResourceType.Energy
+        },
+        new ResourceModel
+        {
+            Id = 5,
+            Type = ResourceType.CleanWater
         },
     };
 
