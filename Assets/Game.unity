@@ -1213,7 +1213,7 @@ MonoBehaviour:
   seedResource: {fileID: 222760300}
   mineralsResource: {fileID: 1866982325}
   quizz: {fileID: 1164230663831448113}
-  Rain: {fileID: 0}
+  Rain: {fileID: 2129924935}
   acidWaterResource: {fileID: 1359402101}
   scaleRange: {x: 1, y: 100}
 --- !u!1 &1683995089 stripped
@@ -2907,6 +2907,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1691084864}
     m_Modifications:
+    - target: {fileID: 2418968710691348906, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
+      propertyPath: m_text
+      value: 'Solar Panel
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3113419498307960228, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
+      propertyPath: m_text
+      value: 'Wind Mill
+
+'
+      objectReference: {fileID: 0}
     - target: {fileID: 3732644008517694598, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
       propertyPath: m_SizeDelta.x
       value: -41.5248
@@ -3063,9 +3075,29 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 4743936523573403773, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -17.839996
+      objectReference: {fileID: 0}
     - target: {fileID: 4777087062985440966, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4777087062985440966, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.0000076294
+      objectReference: {fileID: 0}
+    - target: {fileID: 4777087062985440966, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 4789474924531638574, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4789474924531638574, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 122.3
       objectReference: {fileID: 0}
     - target: {fileID: 5635021632971618678, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
       propertyPath: m_RootOrder
@@ -3074,6 +3106,22 @@ PrefabInstance:
     - target: {fileID: 5635021632971618678, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5635021632971618678, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -101.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 6063764231327119537, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1d421acb635c5e9438923dbc5d569798, type: 3}
+    - target: {fileID: 6820563649685375466, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
+      propertyPath: m_text
+      value: Water Plant
+      objectReference: {fileID: 0}
+    - target: {fileID: 6820563649685375466, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
