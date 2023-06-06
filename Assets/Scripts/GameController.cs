@@ -120,11 +120,19 @@ public class GameController : MonoBehaviour
 
         // updating the seed quantity on the manager
         var newSeedQuantity = ResourceManager.Instance.UpdateByName(ResourceType.Seeds, seedValue);
+        if(newSeedQuantity == 0)
+        {
+            seedResource.alpha = 0.5f;
+        }
         var seedQuantityText = seedResource.GetComponentsInChildren<TMP_Text>();
 
         seedQuantityText[1].text = $"{newSeedQuantity}";
 
         var newWaterQuantity = ResourceManager.Instance.UpdateByName(ResourceType.AcidWater, waterValue);
+        if (newWaterQuantity == 0)
+        {
+            acidWaterResource.alpha = 0.5f;
+        }
         var waterQuantityText = acidWaterResource.GetComponentsInChildren<TMP_Text>();
 
         waterQuantityText[1].text = $"{newWaterQuantity}";
