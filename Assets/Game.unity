@@ -770,21 +770,49 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3593290690021441394}
     m_Modifications:
+    - target: {fileID: 15597179400042390, guid: 96dbf0641526f0442af1c7b4f2d468f1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 15597179400042390, guid: 96dbf0641526f0442af1c7b4f2d468f1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1176255290}
+    - target: {fileID: 15597179400042390, guid: 96dbf0641526f0442af1c7b4f2d468f1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 15597179400042390, guid: 96dbf0641526f0442af1c7b4f2d468f1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ClickSmallPlant
+      objectReference: {fileID: 0}
+    - target: {fileID: 15597179400042390, guid: 96dbf0641526f0442af1c7b4f2d468f1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 15597179400042390, guid: 96dbf0641526f0442af1c7b4f2d468f1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 15597179400042390, guid: 96dbf0641526f0442af1c7b4f2d468f1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7833161578475962224, guid: 96dbf0641526f0442af1c7b4f2d468f1, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7833161578475962224, guid: 96dbf0641526f0442af1c7b4f2d468f1, type: 3}
       propertyPath: m_LocalScale.x
-      value: 6.0253
+      value: 2.3505297
       objectReference: {fileID: 0}
     - target: {fileID: 7833161578475962224, guid: 96dbf0641526f0442af1c7b4f2d468f1, type: 3}
       propertyPath: m_LocalScale.y
-      value: 6.0253
+      value: 2.3505297
       objectReference: {fileID: 0}
     - target: {fileID: 7833161578475962224, guid: 96dbf0641526f0442af1c7b4f2d468f1, type: 3}
       propertyPath: m_LocalScale.z
-      value: 6.0253
+      value: 2.3505297
       objectReference: {fileID: 0}
     - target: {fileID: 7833161578475962224, guid: 96dbf0641526f0442af1c7b4f2d468f1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -855,6 +883,11 @@ GameObject:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1164230662455562185, guid: 4d58f4b97278188468d5c1e45b18ca2d, type: 3}
   m_PrefabInstance: {fileID: 1164230663831448112}
+  m_PrefabAsset: {fileID: 0}
+--- !u!225 &814900402 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 3790723063982370927, guid: 56fe320021b10024ab702b2033b22c9c, type: 3}
+  m_PrefabInstance: {fileID: 976418389}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &976418389
 PrefabInstance:
@@ -1111,6 +1144,31 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 9184509537385094046, guid: 96dbf0641526f0442af1c7b4f2d468f1, type: 3}
   m_PrefabInstance: {fileID: 695870829}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1176255290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1176255287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdff1b7b1f3e4e14cbcb7073b72300c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bankOfSeeds: {fileID: 726400279}
+  plantations: {fileID: 1113930446}
+  spawnedImagePrefab: {fileID: 1176255287}
+  infoTab: {fileID: 623918674}
+  infoText: {fileID: 1827589155}
+  seedResource: {fileID: 222760300}
+  mineralsResource: {fileID: 1866982325}
+  woodResource: {fileID: 814900402}
+  quizz: {fileID: 1164230663831448113}
+  Rain: {fileID: 2129924935}
+  Bees: {fileID: 1693233334}
+  acidWaterResource: {fileID: 1359402101}
+  scaleRange: {x: 1, y: 100}
 --- !u!1 &1198190175
 GameObject:
   m_ObjectHideFlags: 0
@@ -1212,8 +1270,10 @@ MonoBehaviour:
   infoText: {fileID: 1827589155}
   seedResource: {fileID: 222760300}
   mineralsResource: {fileID: 1866982325}
+  woodResource: {fileID: 814900402}
   quizz: {fileID: 1164230663831448113}
   Rain: {fileID: 2129924935}
+  Bees: {fileID: 1693233334}
   acidWaterResource: {fileID: 1359402101}
   scaleRange: {x: 1, y: 100}
 --- !u!1 &1683995089 stripped
@@ -1240,8 +1300,10 @@ MonoBehaviour:
   infoText: {fileID: 1827589155}
   seedResource: {fileID: 222760300}
   mineralsResource: {fileID: 1866982325}
+  woodResource: {fileID: 814900402}
   quizz: {fileID: 1164230663831448113}
   Rain: {fileID: 2129924935}
+  Bees: {fileID: 1693233334}
   acidWaterResource: {fileID: 1359402101}
   scaleRange: {x: 1, y: 100}
 --- !u!1 &1691084863
@@ -1371,6 +1433,11 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!198 &1693233334 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 9019260980859697580, guid: f24ad5f0f0b1012429e00464b0da86cc, type: 3}
+  m_PrefabInstance: {fileID: 329317830327865836}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1726199902
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1722,6 +1789,63 @@ ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 6124533861615134466, guid: a117a39bbbf7c6341ab53d229679668a, type: 3}
   m_PrefabInstance: {fileID: 6124533862519658088}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &329317830327865836
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2118050447745907131, guid: f24ad5f0f0b1012429e00464b0da86cc, type: 3}
+      propertyPath: m_Name
+      value: Bees
+      objectReference: {fileID: 0}
+    - target: {fileID: 3407195057435488508, guid: f24ad5f0f0b1012429e00464b0da86cc, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3407195057435488508, guid: f24ad5f0f0b1012429e00464b0da86cc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 935
+      objectReference: {fileID: 0}
+    - target: {fileID: 3407195057435488508, guid: f24ad5f0f0b1012429e00464b0da86cc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 145
+      objectReference: {fileID: 0}
+    - target: {fileID: 3407195057435488508, guid: f24ad5f0f0b1012429e00464b0da86cc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3407195057435488508, guid: f24ad5f0f0b1012429e00464b0da86cc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.00013253756
+      objectReference: {fileID: 0}
+    - target: {fileID: 3407195057435488508, guid: f24ad5f0f0b1012429e00464b0da86cc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.99984694
+      objectReference: {fileID: 0}
+    - target: {fileID: 3407195057435488508, guid: f24ad5f0f0b1012429e00464b0da86cc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.008742968
+      objectReference: {fileID: 0}
+    - target: {fileID: 3407195057435488508, guid: f24ad5f0f0b1012429e00464b0da86cc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.015157013
+      objectReference: {fileID: 0}
+    - target: {fileID: 3407195057435488508, guid: f24ad5f0f0b1012429e00464b0da86cc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -180
+      objectReference: {fileID: 0}
+    - target: {fileID: 3407195057435488508, guid: f24ad5f0f0b1012429e00464b0da86cc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -1.7369995
+      objectReference: {fileID: 0}
+    - target: {fileID: 3407195057435488508, guid: f24ad5f0f0b1012429e00464b0da86cc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 1.0019989
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f24ad5f0f0b1012429e00464b0da86cc, type: 3}
 --- !u!1001 &950841193601979563
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1796,7 +1920,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1022723970872211195, guid: c9c7c499328ac8a4986155b60dc748b6, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1022723970872211195, guid: c9c7c499328ac8a4986155b60dc748b6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2339,19 +2463,29 @@ PrefabInstance:
       objectReference: {fileID: 439646772}
     - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
       propertyPath: QuestionAndAnswers.Array.size
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
       propertyPath: QuestionAndAnswers.Array.data[0].Question
-      value: What effects can we have on manmade structures due to acid rain?
+      value: What effects can acid rain have on manmade structures?
       objectReference: {fileID: 0}
     - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
       propertyPath: QuestionAndAnswers.Array.data[1].Question
-      value: "A C\xE1rina \xE9 fixe?"
+      value: Which of these is not an effect of Soil Erosion?
       objectReference: {fileID: 0}
     - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
       propertyPath: QuestionAndAnswers.Array.data[2].Question
-      value: "No c\xE9u tem p\xE3o?"
+      value: Which of the following is not considered to be a source of renewable
+        energy?
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
+      propertyPath: QuestionAndAnswers.Array.data[3].Question
+      value: Which of the following are negative impacts of burning fossil fuels?
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
+      propertyPath: QuestionAndAnswers.Array.data[4].Question
+      value: Sewage, agricultural and industrial waste water do not require which
+        treatment?
       objectReference: {fileID: 0}
     - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
       propertyPath: QuestionAndAnswers.Array.data[0].CorrectAnswer
@@ -2359,11 +2493,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
       propertyPath: QuestionAndAnswers.Array.data[1].CorrectAnswer
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
       propertyPath: QuestionAndAnswers.Array.data[2].CorrectAnswer
-      value: 2
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
+      propertyPath: QuestionAndAnswers.Array.data[3].CorrectAnswer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
+      propertyPath: QuestionAndAnswers.Array.data[4].CorrectAnswer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
       propertyPath: QuestionAndAnswers.Array.data[0].AnswerInformation
@@ -2377,7 +2519,40 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
       propertyPath: QuestionAndAnswers.Array.data[1].AnswerInformation
-      value: Toda a gente sabe disso!
+      value: "Soil erosion is the displacement of the upper layer of soil (called
+        topsoil). It is a naturally occurring process that affects all landforms.
+        However, certain human activities greatly enhance this process and contribute
+        to a significant soil loss. This matters significantly, because topsoil contains
+        the highest amount of organic matter and is best suited for agricultural
+        activities. In the last 150 years, as much as half of the world\u2019s topsoil
+        has been lost."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
+      propertyPath: QuestionAndAnswers.Array.data[2].AnswerInformation
+      value: 'Renewable energy is energy that comes from a source that won''t run
+        out. They are natural and self-replenishing, and usually have a low- or zero-carbon
+        footprint. Examples of renewable energy sources include wind power, solar
+        power, bioenergy (organic matter burned as a fuel) and hydroelectric, including
+        tidal energy. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
+      propertyPath: QuestionAndAnswers.Array.data[3].AnswerInformation
+      value: Fossil fuels and the fossil fuel industry have many negative impacts.
+        Some are direct and easily visible, such as pollution and land degradation.
+        Others may not be so obvious. For example, fossil fuels can put human health
+        at risk. Coal miners may develop black lung disease, or communities near
+        transportation routes may be exposed to coal dust. Local communities may
+        be at risk in terms of health, but extraction techniques such as surface
+        mining can also increase the amount of mudslides, landslides and flash floods.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
+      propertyPath: QuestionAndAnswers.Array.data[4].AnswerInformation
+      value: "There are two main types of water treatment plants: 1. Sewage Treatment
+        Plants (STPs) - Sewage treatment refers to the procedure of getting rid of
+        contaminants from wastewater. 2. Effluent Treatment Plants (ETPs) - Effluent
+        treatment plants, on the other hand, generally clean industrial wastewater.
+        They deal with industrial effluent \u2014 the wastewater that flows out as
+        a byproduct of these industries. "
       objectReference: {fileID: 0}
     - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
       propertyPath: QuestionAndAnswers.Array.data[1].Answers.Array.size
@@ -2385,6 +2560,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
       propertyPath: QuestionAndAnswers.Array.data[2].Answers.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
+      propertyPath: QuestionAndAnswers.Array.data[3].Answers.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
+      propertyPath: QuestionAndAnswers.Array.data[4].Answers.Array.size
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
@@ -2405,35 +2588,67 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
       propertyPath: QuestionAndAnswers.Array.data[1].Answers.Array.data[0]
-      value: "\xC9 POIS!"
+      value: Abandonment of land, due to soil infertility
       objectReference: {fileID: 0}
     - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
       propertyPath: QuestionAndAnswers.Array.data[1].Answers.Array.data[1]
-      value: Nop
+      value: Deforestation
       objectReference: {fileID: 0}
     - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
       propertyPath: QuestionAndAnswers.Array.data[1].Answers.Array.data[2]
-      value: Talvez
+      value: Release of previously bounded CO2 into the atmosphere
       objectReference: {fileID: 0}
     - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
       propertyPath: QuestionAndAnswers.Array.data[1].Answers.Array.data[3]
-      value: "N sou a C\xE1rina ent n sei"
+      value: Eutrophication of water bodies (due to high sediment flushing)
       objectReference: {fileID: 0}
     - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
       propertyPath: QuestionAndAnswers.Array.data[2].Answers.Array.data[0]
-      value: Sim
+      value: Hydropower
       objectReference: {fileID: 0}
     - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
       propertyPath: QuestionAndAnswers.Array.data[2].Answers.Array.data[1]
-      value: "N\xE3o"
+      value: Wind
       objectReference: {fileID: 0}
     - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
       propertyPath: QuestionAndAnswers.Array.data[2].Answers.Array.data[2]
-      value: Talvez
+      value: Natural gas
       objectReference: {fileID: 0}
     - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
       propertyPath: QuestionAndAnswers.Array.data[2].Answers.Array.data[3]
-      value: Sou ateu!
+      value: Solar
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
+      propertyPath: QuestionAndAnswers.Array.data[3].Answers.Array.data[0]
+      value: They contribute to environmental degradation and pollution
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
+      propertyPath: QuestionAndAnswers.Array.data[3].Answers.Array.data[1]
+      value: 'They harm local communities '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
+      propertyPath: QuestionAndAnswers.Array.data[3].Answers.Array.data[2]
+      value: 'They contribute to human health problems '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
+      propertyPath: QuestionAndAnswers.Array.data[3].Answers.Array.data[3]
+      value: 'All of the above '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
+      propertyPath: QuestionAndAnswers.Array.data[4].Answers.Array.data[0]
+      value: Removal of harmful microbes
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
+      propertyPath: QuestionAndAnswers.Array.data[4].Answers.Array.data[1]
+      value: Removal of chemicals
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
+      propertyPath: QuestionAndAnswers.Array.data[4].Answers.Array.data[2]
+      value: Removal of salt
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
+      propertyPath: QuestionAndAnswers.Array.data[4].Answers.Array.data[3]
+      value: 'Removal of organic matter '
       objectReference: {fileID: 0}
     - target: {fileID: 1333959038570668735, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
       propertyPath: m_Name
@@ -3358,6 +3573,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5796013917938749825, guid: 103ff1680a7a5e344b8b625cfc9714c6, type: 3}
+      propertyPath: Bees
+      value: 
+      objectReference: {fileID: 1693233334}
+    - target: {fileID: 5796013917938749825, guid: 103ff1680a7a5e344b8b625cfc9714c6, type: 3}
       propertyPath: Rain
       value: 
       objectReference: {fileID: 2129924935}
@@ -3377,6 +3596,10 @@ PrefabInstance:
       propertyPath: seedResource
       value: 
       objectReference: {fileID: 222760300}
+    - target: {fileID: 5796013917938749825, guid: 103ff1680a7a5e344b8b625cfc9714c6, type: 3}
+      propertyPath: woodResource
+      value: 
+      objectReference: {fileID: 814900402}
     - target: {fileID: 5796013917938749825, guid: 103ff1680a7a5e344b8b625cfc9714c6, type: 3}
       propertyPath: bankOfResources
       value: 
@@ -3501,7 +3724,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6139676598259735401, guid: 798de6e0d76e0d54b868fe258dcb363a, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6139676598259735401, guid: 798de6e0d76e0d54b868fe258dcb363a, type: 3}
       propertyPath: m_AnchorMax.x

@@ -16,8 +16,10 @@ public class GameController : MonoBehaviour
     private Image bankImage;
     public CanvasGroup seedResource;
     public CanvasGroup mineralsResource;
+    public CanvasGroup woodResource;
     public GameObject quizz;
     public ParticleSystem Rain;
+    public ParticleSystem Bees;
     public CanvasGroup acidWaterResource;
 
     public Vector2 scaleRange = new Vector2(1f, 100f);
@@ -26,6 +28,7 @@ public class GameController : MonoBehaviour
     void Start()
     {
         this.Rain.Stop();
+        this.Bees.Stop();
 
         //Info Tab is hidden
         this.infoTab.enabled = false;
@@ -83,6 +86,25 @@ public class GameController : MonoBehaviour
     {
         yield return new WaitForSeconds(5f);
         quizz.SetActive(true);
+    }
+
+    //TODO check, not working :(
+    public void ClickSmallPlant()
+    {
+        var woodValue = 1;
+
+        //message appears indicating that some resources were gained
+        var text = "You gained " + woodValue + " wood!" + "\n" + "Good Luck!";
+
+        woodResource.alpha = 1f;
+        var newQuantity = ResourceManager.Instance.UpdateByName(ResourceType.Wood, woodValue);
+        var woodQuantityText = woodResource.GetComponentsInChildren<TMP_Text>();
+        var woodBtnResource = woodResource.GetComponentInChildren<Button>();
+        woodBtnResource.interactable = true;
+
+        woodQuantityText[1].text = $"{newQuantity}";
+
+        StartCoroutine(InfoTabHelper.Instance.ShowInfo(text));
     }
 
     public void clickBankOfResources()
