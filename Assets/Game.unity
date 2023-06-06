@@ -804,15 +804,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7833161578475962224, guid: 96dbf0641526f0442af1c7b4f2d468f1, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.3505297
+      value: 4.548175
       objectReference: {fileID: 0}
     - target: {fileID: 7833161578475962224, guid: 96dbf0641526f0442af1c7b4f2d468f1, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2.3505297
+      value: 4.548175
       objectReference: {fileID: 0}
     - target: {fileID: 7833161578475962224, guid: 96dbf0641526f0442af1c7b4f2d468f1, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2.3505297
+      value: 4.548175
       objectReference: {fileID: 0}
     - target: {fileID: 7833161578475962224, guid: 96dbf0641526f0442af1c7b4f2d468f1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2463,7 +2463,7 @@ PrefabInstance:
       objectReference: {fileID: 439646772}
     - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
       propertyPath: QuestionAndAnswers.Array.size
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
       propertyPath: QuestionAndAnswers.Array.data[0].Question
@@ -2488,6 +2488,29 @@ PrefabInstance:
         treatment?
       objectReference: {fileID: 0}
     - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
+      propertyPath: QuestionAndAnswers.Array.data[5].Question
+      value: How long does a plastic bottle take to decompose (break down)?
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
+      propertyPath: QuestionAndAnswers.Array.data[6].Question
+      value: 'Which of the following is NOT an example of sustainable consumption? '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
+      propertyPath: QuestionAndAnswers.Array.data[7].Question
+      value: 'Over the period from 1970 to 2010, the global population increased
+        by more than 50 per cent. How much percentage did the wildlife population
+        decrease in the same period? '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
+      propertyPath: QuestionAndAnswers.Array.data[8].Question
+      value: ' Which of these foods are pollinated by bees?'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
+      propertyPath: QuestionAndAnswers.Array.data[9].Question
+      value: 'Which of the following is NOT a farming method that is used to make
+        agriculture sustainable? '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
       propertyPath: QuestionAndAnswers.Array.data[0].CorrectAnswer
       value: 4
       objectReference: {fileID: 0}
@@ -2506,6 +2529,26 @@ PrefabInstance:
     - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
       propertyPath: QuestionAndAnswers.Array.data[4].CorrectAnswer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
+      propertyPath: QuestionAndAnswers.Array.data[5].CorrectAnswer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
+      propertyPath: QuestionAndAnswers.Array.data[6].CorrectAnswer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
+      propertyPath: QuestionAndAnswers.Array.data[7].CorrectAnswer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
+      propertyPath: QuestionAndAnswers.Array.data[8].CorrectAnswer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
+      propertyPath: QuestionAndAnswers.Array.data[9].CorrectAnswer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
       propertyPath: QuestionAndAnswers.Array.data[0].AnswerInformation
@@ -2555,6 +2598,50 @@ PrefabInstance:
         a byproduct of these industries. "
       objectReference: {fileID: 0}
     - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
+      propertyPath: QuestionAndAnswers.Array.data[5].AnswerInformation
+      value: "Plastic pollution is a global problem. Approximately 7 billion of the
+        9.2 billion tonnes of plastic produced from 1950-2017 became plastic waste,
+        ending up in landfills or dumped.  Plastic pollution can alter habitats and
+        natural processes, reducing ecosystems\u2019 ability to adapt to climate
+        change, directly affecting millions of people\u2019s livelihoods, food production
+        capabilities and social well-being. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
+      propertyPath: QuestionAndAnswers.Array.data[6].AnswerInformation
+      value: "Sustainable consumption is the concept of consuming resources and products
+        in a sustainable, responsible way, so they can meet our needs now and in
+        the future, without creating a negative environmental impact. It\u2019s about
+        thinking and acting with the environment in mind when we, as final consumers,
+        consume, buy, and dispose. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
+      propertyPath: QuestionAndAnswers.Array.data[7].AnswerInformation
+      value: " Earth\u2019s wildlife populations have plunged by an average of 69%
+        in just under 50 years, according to a leading scientific assessment, as
+        humans continue to clear forests, consume beyond the limits of the planet
+        and pollute on an industrial scale. Many scientists believe we are living
+        through the sixth mass extinction \u2013 the largest loss of life on Earth
+        since the time of the dinosaurs \u2013 and that it is being driven by humans. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
+      propertyPath: QuestionAndAnswers.Array.data[8].AnswerInformation
+      value: It has often been said that bees are responsible for one out of every
+        three bites of food we eat. Most crops grown for their fruits (including
+        vegetables such as squash, cucumber, tomato and eggplant), nuts, seeds, fiber
+        (such as cotton), and hay (alfalfa grown to feed livestock), require pollination
+        by insects. Pollinating insects also play a critical role in maintaining
+        natural plant communities and ensuring production of seeds in most flowering
+        plants.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
+      propertyPath: QuestionAndAnswers.Array.data[9].AnswerInformation
+      value: Unsustainable agriculture can pollute water, air and soil; is a source
+        of greenhouse gasses, and destroys wildlife. Sustainable agriculture uses
+        up to 56 per cent less energy per unit of crops produced, creates 64 per
+        cent fewer greenhouse gas emissions per hectare and supports greater levels
+        of biodiversity than conventional farming.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
       propertyPath: QuestionAndAnswers.Array.data[1].Answers.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -2568,6 +2655,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
       propertyPath: QuestionAndAnswers.Array.data[4].Answers.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
+      propertyPath: QuestionAndAnswers.Array.data[5].Answers.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
+      propertyPath: QuestionAndAnswers.Array.data[6].Answers.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
+      propertyPath: QuestionAndAnswers.Array.data[7].Answers.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
+      propertyPath: QuestionAndAnswers.Array.data[8].Answers.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
+      propertyPath: QuestionAndAnswers.Array.data[9].Answers.Array.size
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
@@ -2650,6 +2757,86 @@ PrefabInstance:
       propertyPath: QuestionAndAnswers.Array.data[4].Answers.Array.data[3]
       value: 'Removal of organic matter '
       objectReference: {fileID: 0}
+    - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
+      propertyPath: QuestionAndAnswers.Array.data[5].Answers.Array.data[0]
+      value: Around 60 years
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
+      propertyPath: QuestionAndAnswers.Array.data[5].Answers.Array.data[1]
+      value: Around 280 years
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
+      propertyPath: QuestionAndAnswers.Array.data[5].Answers.Array.data[2]
+      value: Around 450 years
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
+      propertyPath: QuestionAndAnswers.Array.data[5].Answers.Array.data[3]
+      value: Around 720 years
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
+      propertyPath: QuestionAndAnswers.Array.data[6].Answers.Array.data[0]
+      value: 'Using environmentally-friendly cleaning products. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
+      propertyPath: QuestionAndAnswers.Array.data[6].Answers.Array.data[1]
+      value: 'Developing alternative fuel sources, such as biofuels. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
+      propertyPath: QuestionAndAnswers.Array.data[6].Answers.Array.data[2]
+      value: 'Practicing subsistence farming '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
+      propertyPath: QuestionAndAnswers.Array.data[6].Answers.Array.data[3]
+      value: 'Using solar power. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
+      propertyPath: QuestionAndAnswers.Array.data[7].Answers.Array.data[0]
+      value: 'Around 20 % '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
+      propertyPath: QuestionAndAnswers.Array.data[7].Answers.Array.data[1]
+      value: 'Around 40 % '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
+      propertyPath: QuestionAndAnswers.Array.data[7].Answers.Array.data[2]
+      value: 'Around 60 % '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
+      propertyPath: QuestionAndAnswers.Array.data[7].Answers.Array.data[3]
+      value: 'Around 80 % '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
+      propertyPath: QuestionAndAnswers.Array.data[8].Answers.Array.data[0]
+      value: Blueberries
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
+      propertyPath: QuestionAndAnswers.Array.data[8].Answers.Array.data[1]
+      value: Plums
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
+      propertyPath: QuestionAndAnswers.Array.data[8].Answers.Array.data[2]
+      value: Almonds
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
+      propertyPath: QuestionAndAnswers.Array.data[8].Answers.Array.data[3]
+      value: All of the above
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
+      propertyPath: QuestionAndAnswers.Array.data[9].Answers.Array.data[0]
+      value: Growing one type of crop
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
+      propertyPath: QuestionAndAnswers.Array.data[9].Answers.Array.data[1]
+      value: Conserving water
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
+      propertyPath: QuestionAndAnswers.Array.data[9].Answers.Array.data[2]
+      value: Limiting fertilizer use
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
+      propertyPath: QuestionAndAnswers.Array.data[9].Answers.Array.data[3]
+      value: Limiting pesticide use
+      objectReference: {fileID: 0}
     - target: {fileID: 1333959038570668735, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
       propertyPath: m_Name
       value: QuizzManager
@@ -2663,6 +2850,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1691084864}
     m_Modifications:
+    - target: {fileID: 1799480933201660225, guid: 8bb48de23cf1a6041bc7fe704614827f, type: 3}
+      propertyPath: Bees
+      value: 
+      objectReference: {fileID: 1693233334}
     - target: {fileID: 1799480933201660225, guid: 8bb48de23cf1a6041bc7fe704614827f, type: 3}
       propertyPath: Rain
       value: 
@@ -2691,6 +2882,10 @@ PrefabInstance:
       propertyPath: seedResource
       value: 
       objectReference: {fileID: 222760300}
+    - target: {fileID: 1799480933201660225, guid: 8bb48de23cf1a6041bc7fe704614827f, type: 3}
+      propertyPath: woodResource
+      value: 
+      objectReference: {fileID: 814900402}
     - target: {fileID: 1799480933201660225, guid: 8bb48de23cf1a6041bc7fe704614827f, type: 3}
       propertyPath: seedBtnResource
       value: 

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -112,5 +113,11 @@ public class QuizzManager : MonoBehaviour
         // Wait for 3 seconds
         yield return new WaitForSeconds(3f);
         this.Rain.Stop();
+    }
+
+    internal IEnumerator MakeBees()
+    {
+        // TODO implement
+        throw new NotImplementedException();
     }
 }

@@ -23,6 +23,12 @@ public class AnswerScript : MonoBehaviour
                 StartCoroutine(quizzManager.MakeAcidRain());
             }
 
+            if (quizzManager.questionsRight == 9)
+            {
+                //enable rain for some seconds
+                StartCoroutine(quizzManager.MakeBees());
+            }
+
             StartCoroutine(quizzManager.ShowInfoAboutQuestion());
 
             quizzManager.Correct();
