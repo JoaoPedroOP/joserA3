@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class QuizzManager : MonoBehaviour
 {
+    public GameObject quizz;
     public List<QuestionAndAnswer> QuestionAndAnswers;
     public GameObject questionTab;
     public GameObject[] options;
@@ -30,8 +31,11 @@ public class QuizzManager : MonoBehaviour
         generateQuestion();
     }
 
-    void generateQuestion()
+    public void generateQuestion()
     {
+        //show the quizz
+        showQuizzComponents(true);
+
         //only generate questions if there's one available
         if (QuestionAndAnswers.Count > 0)
         {
@@ -42,6 +46,9 @@ public class QuizzManager : MonoBehaviour
 
             //put the answers of the questions on the btns
             SetAnswers();
+
+            //show question tab and answer buttons
+            ShowquestionTabAndAnswerBtns(true);
         }
         else Debug.Log("Out of Questions!");
     }
@@ -70,17 +77,39 @@ public class QuizzManager : MonoBehaviour
         QuestionAndAnswers.RemoveAt(currentQuestionIndex);
     }
 
-    public IEnumerator ShowInfoAboutQuestion()
+    public IEnumerator ShowInfoAboutQuestion(bool isCorrect)
     {
         //hide question tab and answer buttons
         ShowquestionTabAndAnswerBtns(false);
 
-        //show the information associated to the answer;
-        responseInformation.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text
-            = QuestionAndAnswers[index].AnswerInformation;
+        if (isCorrect)
+        {
+            //show the information associated to the answer;
+            responseInformation.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text
+                = QuestionAndAnswers[index].AnswerInformation;
+        }
 
-        // Wait for 4 seconds
+        //hide the quizz gameObject
+        showQuizzComponents(false);
+
+        // Wait for 1 minute to get the next(if got right) or same(if got wrong) question
         yield return new WaitForSeconds(5f);
+
+        if (isCorrect)
+        {
+            this.Correct();
+        }
+        this.generateQuestion();
+    }
+
+    private void showQuizzComponents(bool v)
+    {
+        Image[] components = gameObject.GetComponents<Image>();
+
+        //foreach (Image component in components)
+        //{
+        //    component. = false;
+        //}
     }
 
     public void ShowquestionTabAndAnswerBtns(bool state)
