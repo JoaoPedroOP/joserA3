@@ -15,8 +15,8 @@ public class GameController : MonoBehaviour
 
     //buildings prefabs
     public GameObject windTurbinePrefab;
-    //public GameObject solarPanelPrefab;
-    //public GameObject waterPlantPrefab;
+    public GameObject solarPanelPrefab;
+    public GameObject waterPlantPrefab;
 
     //buildings
     public GameObject windTurbine;
@@ -299,7 +299,7 @@ public class GameController : MonoBehaviour
         if(newSeedQuantity == 0)
         {
             seedResource.alpha = 0.5f;
-        }
+        }else seedResource.alpha = 1f;
         var seedQuantityText = seedResource.GetComponentsInChildren<TMP_Text>();
 
         seedQuantityText[1].text = $"{newSeedQuantity}";
@@ -308,7 +308,7 @@ public class GameController : MonoBehaviour
         if (newWaterQuantity == 0)
         {
             acidWaterResource.alpha = 0.5f;
-        }
+        }else acidWaterResource.alpha = 1f;
         var waterQuantityText = acidWaterResource.GetComponentsInChildren<TMP_Text>();
 
         waterQuantityText[1].text = $"{newWaterQuantity}";
@@ -336,7 +336,7 @@ public class GameController : MonoBehaviour
         if (newWoodQuantity == 0)
         {
             woodResource.alpha = 0.5f;
-        }
+        }else woodResource.alpha = 1f;
         var woodResourceText = woodResource.GetComponentsInChildren<TMP_Text>();
 
         woodResourceText[1].text = $"{newWoodQuantity}";
@@ -347,7 +347,7 @@ public class GameController : MonoBehaviour
         if (newMineralValue == 0)
         {
             mineralsResource.alpha = 0.5f;
-        }
+        }else mineralsResource.alpha = 1f;
         var mineralQuantityText = mineralsResource.GetComponentsInChildren<TMP_Text>();
 
         mineralQuantityText[1].text = $"{newMineralValue}";
@@ -367,8 +367,9 @@ public class GameController : MonoBehaviour
         var newEnergyQtd = ResourceManager.Instance.UpdateByName(ResourceType.Energy, energyValue);
         if (newEnergyQtd == 0)
         {
-            woodResource.alpha = 0.5f;
-        }
+            energyResource.alpha = 0.5f;
+        }else energyResource.alpha = 1f;
+
         var energyResourceTxt = energyResource.GetComponentsInChildren<TMP_Text>();
 
         energyResourceTxt[1].text = $"{newEnergyQtd}";
@@ -379,12 +380,134 @@ public class GameController : MonoBehaviour
 
     public void clickSolarPanelButton()
     {
+        //consume 5 wood and 1 mineral
+        int woodValue = -5;
+        int mineralValue = -1;
 
+        //message appears indicating that some resources were spent
+        string text = "You Spent " + Math.Abs(woodValue) + " Wood!" + "\n"
+            + "And " + Math.Abs(mineralValue) + " Minerals!";
+
+        // updating the wood quantity on the manager
+        var newWoodQuantity = ResourceManager.Instance.UpdateByName(ResourceType.Wood, woodValue);
+        if (newWoodQuantity == 0)
+        {
+            woodResource.alpha = 0.5f;
+        }else woodResource.alpha = 1f;
+        var woodResourceText = woodResource.GetComponentsInChildren<TMP_Text>();
+
+        woodResourceText[1].text = $"{newWoodQuantity}";
+
+
+        //updating the mineral quantity on the manager
+        var newMineralValue = ResourceManager.Instance.UpdateByName(ResourceType.AcidWater, mineralValue);
+        if (newMineralValue == 0)
+        {
+            mineralsResource.alpha = 0.5f;
+        }else mineralsResource.alpha = 1f;
+        var mineralQuantityText = mineralsResource.GetComponentsInChildren<TMP_Text>();
+
+        mineralQuantityText[1].text = $"{newMineralValue}";
+
+        StartCoroutine(InfoTabHelper.Instance.ShowInfo(text));
+
+        /////spawn the wind turbine animation randomly in the map
+        Vector2 randomPosition = GetRandomPosition();
+        Instantiate(solarPanelPrefab, randomPosition, Quaternion.identity, transform.parent);
+
+        //ADD 5 ENERGY
+        int energyValue = 5;
+        text = "You Gained " + Math.Abs(energyValue) + " Energy Points!";
+
+        // updating the wood quantity on the manager
+        var newEnergyQtd = ResourceManager.Instance.UpdateByName(ResourceType.Energy, energyValue);
+        if (newEnergyQtd == 0)
+        {
+            energyResource.alpha = 0.5f;
+        }else energyResource.alpha = 1f;
+        var energyResourceTxt = energyResource.GetComponentsInChildren<TMP_Text>();
+
+        energyResourceTxt[1].text = $"{newEnergyQtd}";
+
+        StartCoroutine(InfoTabHelper.Instance.ShowInfo(text)); //-> only this message is shown -_-
+        /////////
     }
 
     public void clickWaterPlantButton()
     {
+        //consume 5 wood, 1 mineral and 8 energy?
+        int woodValue = -5;
+        int mineralValue = -1;
+        int energyValue = -8;
 
+        //message appears indicating that some resources were spent
+        string text = "You Spent " + Math.Abs(woodValue) + " Wood!" + "\n"
+            + "And " + Math.Abs(mineralValue) + " Minerals!"
+            + "And" + Math.Abs(energyValue) + "Energy!";
+
+        // updating the wood quantity on the manager
+        var newWoodQuantity = ResourceManager.Instance.UpdateByName(ResourceType.Wood, woodValue);
+        if (newWoodQuantity == 0)
+        {
+            woodResource.alpha = 0.5f;
+        }
+        var woodResourceText = woodResource.GetComponentsInChildren<TMP_Text>();
+
+        woodResourceText[1].text = $"{newWoodQuantity}";
+
+        // updating the energy quantity on the manager
+        var newEnergyQuantity = ResourceManager.Instance.UpdateByName(ResourceType.Energy, energyValue);
+        if (newEnergyQuantity == 0)
+        {
+            energyResource.alpha = 0.5f;
+        }
+        else energyResource.alpha = 1f;
+        var energyResourceText = energyResource.GetComponentsInChildren<TMP_Text>();
+
+        energyResourceText[1].text = $"{newEnergyQuantity}";
+
+        //updating the mineral quantity on the manager
+        var newMineralValue = ResourceManager.Instance.UpdateByName(ResourceType.AcidWater, mineralValue);
+        if (newMineralValue == 0)
+        {
+            mineralsResource.alpha = 0.5f;
+        }
+        else mineralsResource.alpha = 1f;
+        var mineralQuantityText = mineralsResource.GetComponentsInChildren<TMP_Text>();
+
+        mineralQuantityText[1].text = $"{newMineralValue}";
+
+        StartCoroutine(InfoTabHelper.Instance.ShowInfo(text));
+
+        /////spawn the solar panel animation randomly in the map
+        Vector2 randomPosition = GetRandomPosition();
+        Instantiate(solarPanelPrefab, randomPosition, Quaternion.identity, transform.parent);
+
+        //Convert Acid Water to clean Water
+        int acidWaterValue = ResourceManager.Instance.GetResourceByType(ResourceType.AcidWater).Quantity;
+        text = "You converted all the acid water to clean water!";
+
+        // updating the clean water quantity on the manager and the acid water
+        var newCleanWaterQtd = ResourceManager.Instance.UpdateByName(ResourceType.CleanWater, acidWaterValue);
+        if (newCleanWaterQtd == 0)
+        {
+            cleanWaterResource.alpha = 0.5f;
+        }else cleanWaterResource.alpha = 1f;
+        var cleanWaterResourceTxt = cleanWaterResource.GetComponentsInChildren<TMP_Text>();
+
+        cleanWaterResourceTxt[1].text = $"{newCleanWaterQtd}";
+
+        var newAcidWaterValue = ResourceManager.Instance.UpdateByName(ResourceType.AcidWater,-newCleanWaterQtd);
+        if(newAcidWaterValue == 0)
+        {
+            acidWaterResource.alpha = 0.5f;
+        }else acidWaterResource.alpha = 1f;
+        var acidWaterResourceTxt = cleanWaterResource.GetComponentsInChildren<TMP_Text>();
+
+        acidWaterResourceTxt[1].text = $"{newAcidWaterValue}";
+
+        StartCoroutine(InfoTabHelper.Instance.ShowInfo(text)); //-> only this message is shown -_-
+        /////////
     }
 
     private Vector2 GetRandomPosition()
