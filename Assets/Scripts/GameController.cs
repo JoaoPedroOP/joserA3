@@ -8,8 +8,15 @@ using Image = UnityEngine.UI.Image;
 public class GameController : MonoBehaviour
 {
     public GameObject bankOfSeeds;
+
+    //plants 
     public GameObject plantations;
     public GameObject spawnedImagePrefab;
+
+    //buildings prefabs
+    public GameObject windTurbinePrefab;
+    //public GameObject solarPanelPrefab;
+    //public GameObject waterPlantPrefab;
 
     //buildings
     public GameObject windTurbine;
@@ -20,13 +27,15 @@ public class GameController : MonoBehaviour
     public Image infoTab;
     public Text infoText;
     private Image bankImage;
+    public CanvasGroup acidWaterResource;
     public CanvasGroup seedResource;
     public CanvasGroup mineralsResource;
     public CanvasGroup woodResource;
+    public CanvasGroup energyResource;
+    public CanvasGroup cleanWaterResource;
     public GameObject quizz;
     public ParticleSystem Rain;
     public ParticleSystem Bees;
-    public CanvasGroup acidWaterResource;
 
     public Vector2 scaleRange = new Vector2(1f, 100f);
 
@@ -314,7 +323,58 @@ public class GameController : MonoBehaviour
 
     public void clickWindTurbineButton()
     {
+        //consume 1 wood and 1 mineral
+        int woodValue = -1;
+        int mineralValue = -1;
 
+        //message appears indicating that some resources were spent
+        string text = "You Spent " + Math.Abs(woodValue) + " Wood!" + "\n"
+            + "And " + Math.Abs(mineralValue) + " Minerals!";
+
+        // updating the wood quantity on the manager
+        var newWoodQuantity = ResourceManager.Instance.UpdateByName(ResourceType.Wood, woodValue);
+        if (newWoodQuantity == 0)
+        {
+            woodResource.alpha = 0.5f;
+        }
+        var woodResourceText = woodResource.GetComponentsInChildren<TMP_Text>();
+
+        woodResourceText[1].text = $"{newWoodQuantity}";
+
+
+        //updating the mineral quantity on the manager
+        var newMineralValue = ResourceManager.Instance.UpdateByName(ResourceType.AcidWater, mineralValue);
+        if (newMineralValue == 0)
+        {
+            mineralsResource.alpha = 0.5f;
+        }
+        var mineralQuantityText = mineralsResource.GetComponentsInChildren<TMP_Text>();
+
+        mineralQuantityText[1].text = $"{newMineralValue}";
+
+        StartCoroutine(InfoTabHelper.Instance.ShowInfo(text));
+
+        /////spawn the wind turbine animation randomly in the map
+        Vector2 randomPosition = GetRandomPosition();
+        Instantiate(windTurbinePrefab, randomPosition, Quaternion.identity, transform.parent);
+
+
+        //ADD 3 ENERGY
+        int energyValue = 3;
+        text = "You Gained " + Math.Abs(energyValue) + " Energy Points!";
+
+        // updating the wood quantity on the manager
+        var newEnergyQtd = ResourceManager.Instance.UpdateByName(ResourceType.Energy, energyValue);
+        if (newEnergyQtd == 0)
+        {
+            woodResource.alpha = 0.5f;
+        }
+        var energyResourceTxt = energyResource.GetComponentsInChildren<TMP_Text>();
+
+        energyResourceTxt[1].text = $"{newEnergyQtd}";
+
+        StartCoroutine(InfoTabHelper.Instance.ShowInfo(text)); //-> only this message is shown -_-
+        /////////
     }
 
     public void clickSolarPanelButton()
@@ -329,8 +389,8 @@ public class GameController : MonoBehaviour
 
     private Vector2 GetRandomPosition()
     {
-        float x = UnityEngine.Random.Range(-10f, 870f); 
-        float y = UnityEngine.Random.Range(0f, 470f);
+        float x = UnityEngine.Random.Range(-10f, 870/4f); 
+        float y = UnityEngine.Random.Range(0f, 470/4f);
         return new Vector2(x, y);
     }
 }

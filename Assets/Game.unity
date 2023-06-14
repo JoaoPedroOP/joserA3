@@ -152,7 +152,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 416192920}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -168,6 +168,11 @@ RectTransform:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2735667102456631007, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
   m_PrefabInstance: {fileID: 3732644008640011850}
+  m_PrefabAsset: {fileID: 0}
+--- !u!225 &135174360 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 8783535552230171728, guid: 5d79fa0fdcd9d9843b0eec3aefa872c5, type: 3}
+  m_PrefabInstance: {fileID: 1991288049}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &143241040
 PrefabInstance:
@@ -553,11 +558,11 @@ RectTransform:
   m_Children:
   - {fileID: 2004215732}
   - {fileID: 3593290690021441394}
+  - {fileID: 9709566}
   - {fileID: 221872181}
   - {fileID: 56439346}
-  - {fileID: 9709566}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1174,6 +1179,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1082889298194648242, guid: 5814e1294778e17449e7b84404632806, type: 3}
   m_PrefabInstance: {fileID: 3593290690021441393}
   m_PrefabAsset: {fileID: 0}
+--- !u!225 &1114825931 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 8783535552230171728, guid: 5d79fa0fdcd9d9843b0eec3aefa872c5, type: 3}
+  m_PrefabInstance: {fileID: 143241040}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1117120299 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1164230662733925659, guid: 4d58f4b97278188468d5c1e45b18ca2d, type: 3}
@@ -1205,19 +1215,22 @@ MonoBehaviour:
   bankOfSeeds: {fileID: 726400279}
   plantations: {fileID: 1113930446}
   spawnedImagePrefab: {fileID: 1176255287}
+  windTurbinePrefab: {fileID: 0}
   windTurbine: {fileID: 1923387474}
   solarPanel: {fileID: 1794654611}
   waterPlant: {fileID: 69036666}
   answerScript: {fileID: 1176462227}
   infoTab: {fileID: 623918674}
   infoText: {fileID: 1827589155}
+  acidWaterResource: {fileID: 1359402101}
   seedResource: {fileID: 222760300}
   mineralsResource: {fileID: 1866982325}
   woodResource: {fileID: 814900402}
+  energyResource: {fileID: 0}
+  cleanWaterResource: {fileID: 0}
   quizz: {fileID: 1164230663831448113}
   Rain: {fileID: 2129924935}
   Bees: {fileID: 1693233334}
-  acidWaterResource: {fileID: 1359402101}
   scaleRange: {x: 1, y: 100}
   unlockWaterPlant: 0
   unlockSolarPanel: 0
@@ -1308,6 +1321,11 @@ CanvasGroup:
   m_CorrespondingSourceObject: {fileID: 3790723062832271099, guid: 56fe320021b10024ab702b2033b22c9c, type: 3}
   m_PrefabInstance: {fileID: 976418389}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1463620277 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1022723970872211194, guid: c9c7c499328ac8a4986155b60dc748b6, type: 3}
+  m_PrefabInstance: {fileID: 1022723970788816590}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1528186682 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 84455403107564496, guid: 32d15f7f887df3640bae7906478e5478, type: 3}
@@ -1344,19 +1362,22 @@ MonoBehaviour:
   bankOfSeeds: {fileID: 726400279}
   plantations: {fileID: 1113930446}
   spawnedImagePrefab: {fileID: 1176255287}
+  windTurbinePrefab: {fileID: 1463620277}
   windTurbine: {fileID: 1923387474}
   solarPanel: {fileID: 1794654611}
   waterPlant: {fileID: 69036666}
   answerScript: {fileID: 1176462227}
   infoTab: {fileID: 623918674}
   infoText: {fileID: 1827589155}
+  acidWaterResource: {fileID: 1359402101}
   seedResource: {fileID: 222760300}
   mineralsResource: {fileID: 1866982325}
   woodResource: {fileID: 814900402}
+  energyResource: {fileID: 135174360}
+  cleanWaterResource: {fileID: 1114825931}
   quizz: {fileID: 1164230663831448113}
   Rain: {fileID: 2129924935}
   Bees: {fileID: 1693233334}
-  acidWaterResource: {fileID: 1359402101}
   scaleRange: {x: 1, y: 100}
   unlockWaterPlant: 0
   unlockSolarPanel: 0
@@ -1384,19 +1405,22 @@ MonoBehaviour:
   bankOfSeeds: {fileID: 726400279}
   plantations: {fileID: 1113930446}
   spawnedImagePrefab: {fileID: 1176255287}
+  windTurbinePrefab: {fileID: 0}
   windTurbine: {fileID: 1923387474}
   solarPanel: {fileID: 1794654611}
   waterPlant: {fileID: 69036666}
   answerScript: {fileID: 1176462227}
   infoTab: {fileID: 623918674}
   infoText: {fileID: 1827589155}
+  acidWaterResource: {fileID: 1359402101}
   seedResource: {fileID: 222760300}
   mineralsResource: {fileID: 1866982325}
   woodResource: {fileID: 814900402}
+  energyResource: {fileID: 0}
+  cleanWaterResource: {fileID: 0}
   quizz: {fileID: 1164230663831448113}
   Rain: {fileID: 2129924935}
   Bees: {fileID: 1693233334}
-  acidWaterResource: {fileID: 1359402101}
   scaleRange: {x: 1, y: 100}
   unlockWaterPlant: 0
   unlockSolarPanel: 0
@@ -1443,7 +1467,7 @@ RectTransform:
   - {fileID: 623918672}
   - {fileID: 1779071992}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2113,7 +2137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1022723970872211195, guid: c9c7c499328ac8a4986155b60dc748b6, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1022723970872211195, guid: c9c7c499328ac8a4986155b60dc748b6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3096,6 +3120,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 814900402}
     - target: {fileID: 1799480933201660225, guid: 8bb48de23cf1a6041bc7fe704614827f, type: 3}
+      propertyPath: energyResource
+      value: 
+      objectReference: {fileID: 135174360}
+    - target: {fileID: 1799480933201660225, guid: 8bb48de23cf1a6041bc7fe704614827f, type: 3}
       propertyPath: seedBtnResource
       value: 
       objectReference: {fileID: 222760296}
@@ -3107,6 +3135,14 @@ PrefabInstance:
       propertyPath: acidWaterResource
       value: 
       objectReference: {fileID: 1359402101}
+    - target: {fileID: 1799480933201660225, guid: 8bb48de23cf1a6041bc7fe704614827f, type: 3}
+      propertyPath: windTurbinePrefab
+      value: 
+      objectReference: {fileID: 1463620277}
+    - target: {fileID: 1799480933201660225, guid: 8bb48de23cf1a6041bc7fe704614827f, type: 3}
+      propertyPath: cleanWaterResource
+      value: 
+      objectReference: {fileID: 1114825931}
     - target: {fileID: 1799480933201660225, guid: 8bb48de23cf1a6041bc7fe704614827f, type: 3}
       propertyPath: spawnedImagePrefab
       value: 
@@ -3596,6 +3632,10 @@ PrefabInstance:
       value: 1.1185
       objectReference: {fileID: 0}
     - target: {fileID: 2005424904061934253, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2005424904061934253, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -3604,8 +3644,56 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2005424904061934253, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1260054985}
+    - target: {fileID: 2005424904061934253, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2005424904061934253, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: clickWindTurbineButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 2005424904061934253, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2005424904061934253, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2105995585784402286, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2105995585784402286, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2105995585784402286, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2105995585784402286, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1260054985}
+    - target: {fileID: 2105995585784402286, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2105995585784402286, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: clickWaterPlantButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 2105995585784402286, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2105995585784402286, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2418968710691348906, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
       propertyPath: m_text
@@ -3765,15 +3853,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3732644010082182578, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3732644010082182578, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3732644010082182578, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3732644010082182578, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -3781,7 +3869,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3732644010082182578, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -16.71872
+      value: -16.718735
       objectReference: {fileID: 0}
     - target: {fileID: 3732644010082182578, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3846,6 +3934,38 @@ PrefabInstance:
     - target: {fileID: 5635021632971618678, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -101.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 5707342938706151866, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5707342938706151866, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5707342938706151866, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5707342938706151866, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1260054985}
+    - target: {fileID: 5707342938706151866, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5707342938706151866, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: clickSolarPanelButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 5707342938706151866, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5707342938706151866, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6063764231327119537, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
       propertyPath: m_Sprite
@@ -4005,6 +4125,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 814900402}
     - target: {fileID: 5099133804623858118, guid: 2cbe1c802d64c7a4d97d97dd8af2f368, type: 3}
+      propertyPath: energyResource
+      value: 
+      objectReference: {fileID: 135174360}
+    - target: {fileID: 5099133804623858118, guid: 2cbe1c802d64c7a4d97d97dd8af2f368, type: 3}
       propertyPath: mineralsResource
       value: 
       objectReference: {fileID: 1866982325}
@@ -4012,6 +4136,14 @@ PrefabInstance:
       propertyPath: acidWaterResource
       value: 
       objectReference: {fileID: 1359402101}
+    - target: {fileID: 5099133804623858118, guid: 2cbe1c802d64c7a4d97d97dd8af2f368, type: 3}
+      propertyPath: windTurbinePrefab
+      value: 
+      objectReference: {fileID: 1463620277}
+    - target: {fileID: 5099133804623858118, guid: 2cbe1c802d64c7a4d97d97dd8af2f368, type: 3}
+      propertyPath: cleanWaterResource
+      value: 
+      objectReference: {fileID: 1114825931}
     - target: {fileID: 5099133804623858118, guid: 2cbe1c802d64c7a4d97d97dd8af2f368, type: 3}
       propertyPath: spawnedImagePrefab
       value: 
@@ -4158,6 +4290,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 814900402}
     - target: {fileID: 5796013917938749825, guid: 103ff1680a7a5e344b8b625cfc9714c6, type: 3}
+      propertyPath: energyResource
+      value: 
+      objectReference: {fileID: 135174360}
+    - target: {fileID: 5796013917938749825, guid: 103ff1680a7a5e344b8b625cfc9714c6, type: 3}
       propertyPath: bankOfResources
       value: 
       objectReference: {fileID: 726400279}
@@ -4173,6 +4309,14 @@ PrefabInstance:
       propertyPath: acidWaterResource
       value: 
       objectReference: {fileID: 1359402101}
+    - target: {fileID: 5796013917938749825, guid: 103ff1680a7a5e344b8b625cfc9714c6, type: 3}
+      propertyPath: windTurbinePrefab
+      value: 
+      objectReference: {fileID: 1463620277}
+    - target: {fileID: 5796013917938749825, guid: 103ff1680a7a5e344b8b625cfc9714c6, type: 3}
+      propertyPath: cleanWaterResource
+      value: 
+      objectReference: {fileID: 1114825931}
     - target: {fileID: 5796013917938749825, guid: 103ff1680a7a5e344b8b625cfc9714c6, type: 3}
       propertyPath: spawnedImagePrefab
       value: 
@@ -4281,7 +4425,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6139676598259735401, guid: 798de6e0d76e0d54b868fe258dcb363a, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6139676598259735401, guid: 798de6e0d76e0d54b868fe258dcb363a, type: 3}
       propertyPath: m_AnchorMax.x
