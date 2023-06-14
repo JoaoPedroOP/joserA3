@@ -11,6 +11,12 @@ public class GameController : MonoBehaviour
     public GameObject plantations;
     public GameObject spawnedImagePrefab;
 
+    //buildings
+    public GameObject windTurbine;
+    public GameObject solarPanel;
+    public GameObject waterPlant;
+    public AnswerScript answerScript;
+
     public Image infoTab;
     public Text infoText;
     private Image bankImage;
@@ -23,6 +29,16 @@ public class GameController : MonoBehaviour
     public CanvasGroup acidWaterResource;
 
     public Vector2 scaleRange = new Vector2(1f, 100f);
+
+    //unlockBuildings
+    public bool unlockWaterPlant = false;
+    public bool unlockSolarPanel = false;
+    public bool unlockWindTurbine = false;
+
+    //unlockBeesAnimalsFruitTrees
+    public bool unlockBees = false;
+    public bool unlockAnimals = false;
+    public bool unlockFruitTrees = false;
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +64,15 @@ public class GameController : MonoBehaviour
         var plantBtn = plantations.GetComponentInChildren<Button>();
         var plantBtnImage = plantBtn.GetComponentInChildren<UnityEngine.UI.Image>();
 
+        var windTurbineBtn = windTurbine.GetComponentInChildren<Button>();
+        var windTurbineImage = windTurbineBtn.GetComponentInChildren<UnityEngine.UI.Image>();
+
+        var solarPanelBtn = solarPanel.GetComponentInChildren<Button>();
+        var solarPanelImage = solarPanelBtn.GetComponentInChildren<UnityEngine.UI.Image>();
+
+        var waterPlantBtn = waterPlant.GetComponentInChildren<Button>();
+        var waterPlantImage = waterPlantBtn.GetComponentInChildren<UnityEngine.UI.Image>();
+
         if (!hasPlantResources())
         {
             plantBtn.enabled = false;
@@ -62,6 +87,126 @@ public class GameController : MonoBehaviour
             currentColor.a = 1f;
             plantBtnImage.color = currentColor;
         }
+
+        if (!hasWindTurbineResources())
+        {
+            windTurbineBtn.enabled = false;
+            Color currentColor = windTurbineImage.color;
+            currentColor.a = 0.5f;
+            windTurbineImage.color = currentColor;
+        }
+        else
+        {
+            windTurbineBtn.enabled = true;
+            Color currentColor = windTurbineImage.color;
+            currentColor.a = 1f;
+            windTurbineImage.color = currentColor;
+        }
+
+        if (!hasSolarPanelResources())
+        {
+            solarPanelBtn.enabled = false;
+            Color currentColor = solarPanelImage.color;
+            currentColor.a = 0.5f;
+            solarPanelImage.color = currentColor;
+        }
+        else
+        {
+            solarPanelBtn.enabled = true;
+            Color currentColor = solarPanelImage.color;
+            currentColor.a = 1f;
+            solarPanelImage.color = currentColor;
+        }
+
+        if (!hasWaterPlantResources())
+        {
+            waterPlantBtn.enabled = false;
+            Color currentColor = waterPlantImage.color;
+            currentColor.a = 0.5f;
+            waterPlantImage.color = currentColor;
+        }
+        else
+        {
+            waterPlantBtn.enabled = true;
+            Color currentColor = waterPlantImage.color;
+            currentColor.a = 1f;
+            waterPlantImage.color = currentColor;
+        }
+    }
+
+    private bool hasWaterPlantResources()
+    {
+        if(!unlockWaterPlant)
+            return false;
+
+        //wood, minerals, energy and acid water
+        int woodValue = 1;
+        int mineralsValue = 1;
+        int energyValue = 1;
+        int acidWaterValue = 1;
+
+        var currentWoodValue = ResourceManager.Instance.
+            GetResourceByType(ResourceType.Wood);
+        var currentMineralValue = ResourceManager.Instance.
+            GetResourceByType(ResourceType.Minerals);
+        var currentEnergyValue = ResourceManager.Instance.
+            GetResourceByType(ResourceType.Energy);
+        var currentAcidWater = ResourceManager.Instance.
+            GetResourceByType(ResourceType.AcidWater);
+
+        if (currentWoodValue.Quantity >= woodValue
+            && currentMineralValue.Quantity >= mineralsValue
+            && currentEnergyValue.Quantity >= energyValue
+            && currentAcidWater.Quantity >= acidWaterValue)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    private bool hasSolarPanelResources()
+    {
+        if (!unlockSolarPanel)
+            return false;
+
+        //wood and minerals
+        int woodValue = 2;
+        int mineralsValue = 3;
+
+        var currentWoodValue = ResourceManager.Instance.
+            GetResourceByType(ResourceType.Wood);
+        var currentMineralValue = ResourceManager.Instance.
+            GetResourceByType(ResourceType.Minerals);
+
+        if (currentWoodValue.Quantity >= woodValue && currentMineralValue.Quantity >= mineralsValue)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    private bool hasWindTurbineResources()
+    {
+        if (!unlockWindTurbine)
+            return false;
+
+        //wood and minerals
+        int woodValue = 1;
+        int mineralsValue = 1;
+
+        var currentWoodValue = ResourceManager.Instance.
+            GetResourceByType(ResourceType.Wood);
+        var currentMineralValue = ResourceManager.Instance.
+            GetResourceByType(ResourceType.Minerals);
+
+        if (currentWoodValue.Quantity >= woodValue && currentMineralValue.Quantity >= mineralsValue)
+        {
+            return true;
+        }
+
+        return false;
     }
 
     private bool hasPlantResources()
@@ -109,7 +254,7 @@ public class GameController : MonoBehaviour
 
     public void clickBankOfResources()
     {
-        int seedValue = 5;
+        int seedValue = 50;
 
         //message appears indicating that some resources were gained
         string text = "You gained " + seedValue + " Seeds!" + "\n" + "Good Luck!";
@@ -165,6 +310,21 @@ public class GameController : MonoBehaviour
         Vector2 randomPosition = GetRandomPosition();
         Instantiate(spawnedImagePrefab, randomPosition, Quaternion.identity,transform.parent);
         
+    }
+
+    public void clickWindTurbineButton()
+    {
+
+    }
+
+    public void clickSolarPanelButton()
+    {
+
+    }
+
+    public void clickWaterPlantButton()
+    {
+
     }
 
     private Vector2 GetRandomPosition()

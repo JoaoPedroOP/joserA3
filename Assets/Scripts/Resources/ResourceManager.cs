@@ -27,12 +27,14 @@ public class ResourceManager : MonoBehaviour
         new ResourceModel
         {
             Id = 3,
-            Type = ResourceType.Wood
+            Type = ResourceType.Wood,
+            Quantity = 10,
         },
         new ResourceModel
         {
             Id = 4,
-            Type = ResourceType.Energy
+            Type = ResourceType.Energy,
+            Quantity = 10
         },
         new ResourceModel
         {

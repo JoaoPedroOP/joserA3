@@ -123,10 +123,51 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &9709565
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9709566}
+  m_Layer: 5
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &9709566
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9709565}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 416192920}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &56439346 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6139676598259735401, guid: 798de6e0d76e0d54b868fe258dcb363a, type: 3}
   m_PrefabInstance: {fileID: 6139676598213929307}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &69036666 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2735667102456631007, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
+  m_PrefabInstance: {fileID: 3732644008640011850}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &143241040
 PrefabInstance:
@@ -514,6 +555,7 @@ RectTransform:
   - {fileID: 3593290690021441394}
   - {fileID: 221872181}
   - {fileID: 56439346}
+  - {fileID: 9709566}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1104,6 +1146,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6404255862781254082, guid: 56fe320021b10024ab702b2033b22c9c, type: 3}
+      propertyPath: m_text
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6404255863795270525, guid: 56fe320021b10024ab702b2033b22c9c, type: 3}
       propertyPath: m_text
       value: 10
@@ -1159,6 +1205,10 @@ MonoBehaviour:
   bankOfSeeds: {fileID: 726400279}
   plantations: {fileID: 1113930446}
   spawnedImagePrefab: {fileID: 1176255287}
+  windTurbine: {fileID: 1923387474}
+  solarPanel: {fileID: 1794654611}
+  waterPlant: {fileID: 69036666}
+  answerScript: {fileID: 1176462227}
   infoTab: {fileID: 623918674}
   infoText: {fileID: 1827589155}
   seedResource: {fileID: 222760300}
@@ -1169,6 +1219,23 @@ MonoBehaviour:
   Bees: {fileID: 1693233334}
   acidWaterResource: {fileID: 1359402101}
   scaleRange: {x: 1, y: 100}
+  unlockWaterPlant: 0
+  unlockSolarPanel: 0
+  unlockWindTurbine: 0
+  unlockBees: 0
+  unlockAnimals: 0
+  unlockFruitTrees: 0
+--- !u!114 &1176462227 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8236052576678892153, guid: 57b2cdd0b90a89a48b29bec3faa85441, type: 3}
+  m_PrefabInstance: {fileID: 739018551592618971}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06f82e4b7d184864b9744dfb2d4b3da4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1198190175
 GameObject:
   m_ObjectHideFlags: 0
@@ -1215,6 +1282,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1260054985 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5099133804623858118, guid: 2cbe1c802d64c7a4d97d97dd8af2f368, type: 3}
+  m_PrefabInstance: {fileID: 5099133803399503887}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdff1b7b1f3e4e14cbcb7073b72300c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1325693164 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1164230663374866616, guid: 4d58f4b97278188468d5c1e45b18ca2d, type: 3}
@@ -1266,6 +1344,10 @@ MonoBehaviour:
   bankOfSeeds: {fileID: 726400279}
   plantations: {fileID: 1113930446}
   spawnedImagePrefab: {fileID: 1176255287}
+  windTurbine: {fileID: 1923387474}
+  solarPanel: {fileID: 1794654611}
+  waterPlant: {fileID: 69036666}
+  answerScript: {fileID: 1176462227}
   infoTab: {fileID: 623918674}
   infoText: {fileID: 1827589155}
   seedResource: {fileID: 222760300}
@@ -1276,6 +1358,12 @@ MonoBehaviour:
   Bees: {fileID: 1693233334}
   acidWaterResource: {fileID: 1359402101}
   scaleRange: {x: 1, y: 100}
+  unlockWaterPlant: 0
+  unlockSolarPanel: 0
+  unlockWindTurbine: 0
+  unlockBees: 0
+  unlockAnimals: 0
+  unlockFruitTrees: 0
 --- !u!1 &1683995089 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4628333291187204978, guid: 5814e1294778e17449e7b84404632806, type: 3}
@@ -1296,6 +1384,10 @@ MonoBehaviour:
   bankOfSeeds: {fileID: 726400279}
   plantations: {fileID: 1113930446}
   spawnedImagePrefab: {fileID: 1176255287}
+  windTurbine: {fileID: 1923387474}
+  solarPanel: {fileID: 1794654611}
+  waterPlant: {fileID: 69036666}
+  answerScript: {fileID: 1176462227}
   infoTab: {fileID: 623918674}
   infoText: {fileID: 1827589155}
   seedResource: {fileID: 222760300}
@@ -1306,6 +1398,12 @@ MonoBehaviour:
   Bees: {fileID: 1693233334}
   acidWaterResource: {fileID: 1359402101}
   scaleRange: {x: 1, y: 100}
+  unlockWaterPlant: 0
+  unlockSolarPanel: 0
+  unlockWindTurbine: 0
+  unlockBees: 0
+  unlockAnimals: 0
+  unlockFruitTrees: 0
 --- !u!1 &1691084863
 GameObject:
   m_ObjectHideFlags: 0
@@ -1548,6 +1646,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3732644010082182578, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
   m_PrefabInstance: {fileID: 3732644008640011850}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1794654611 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 783518710916852237, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
+  m_PrefabInstance: {fileID: 3732644008640011850}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1827589155 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5796013919116682227, guid: 103ff1680a7a5e344b8b625cfc9714c6, type: 3}
@@ -1564,6 +1667,11 @@ CanvasGroup:
   m_CorrespondingSourceObject: {fileID: 3790723062890785488, guid: 56fe320021b10024ab702b2033b22c9c, type: 3}
   m_PrefabInstance: {fileID: 976418389}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1923387474 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3559131852704561680, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
+  m_PrefabInstance: {fileID: 3732644008640011850}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1991288049
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1575,6 +1683,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 74a68ac77c148e54183cf5405c93cf18, type: 3}
+    - target: {fileID: 1557758664175455741, guid: 5d79fa0fdcd9d9843b0eec3aefa872c5, type: 3}
+      propertyPath: m_text
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2535935508442438619, guid: 5d79fa0fdcd9d9843b0eec3aefa872c5, type: 3}
       propertyPath: m_Name
       value: Energy
@@ -1846,6 +1958,87 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f24ad5f0f0b1012429e00464b0da86cc, type: 3}
+--- !u!1001 &739018551592618971
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2045866985169018560, guid: 57b2cdd0b90a89a48b29bec3faa85441, type: 3}
+      propertyPath: m_Name
+      value: UnlockManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8236052576678892153, guid: 57b2cdd0b90a89a48b29bec3faa85441, type: 3}
+      propertyPath: isCorrect
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8236052576678892153, guid: 57b2cdd0b90a89a48b29bec3faa85441, type: 3}
+      propertyPath: quizzManager
+      value: 
+      objectReference: {fileID: 152386387}
+    - target: {fileID: 8236052576678892153, guid: 57b2cdd0b90a89a48b29bec3faa85441, type: 3}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 1260054985}
+    - target: {fileID: 8236052576678892153, guid: 57b2cdd0b90a89a48b29bec3faa85441, type: 3}
+      propertyPath: unlockSolarPanel
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8236052576678892153, guid: 57b2cdd0b90a89a48b29bec3faa85441, type: 3}
+      propertyPath: unlockWaterPlant
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8236052576678892153, guid: 57b2cdd0b90a89a48b29bec3faa85441, type: 3}
+      propertyPath: unlockWindTurbine
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9122968682167673762, guid: 57b2cdd0b90a89a48b29bec3faa85441, type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 9122968682167673762, guid: 57b2cdd0b90a89a48b29bec3faa85441, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 283.45917
+      objectReference: {fileID: 0}
+    - target: {fileID: 9122968682167673762, guid: 57b2cdd0b90a89a48b29bec3faa85441, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 238.74622
+      objectReference: {fileID: 0}
+    - target: {fileID: 9122968682167673762, guid: 57b2cdd0b90a89a48b29bec3faa85441, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.8876724
+      objectReference: {fileID: 0}
+    - target: {fileID: 9122968682167673762, guid: 57b2cdd0b90a89a48b29bec3faa85441, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9122968682167673762, guid: 57b2cdd0b90a89a48b29bec3faa85441, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9122968682167673762, guid: 57b2cdd0b90a89a48b29bec3faa85441, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9122968682167673762, guid: 57b2cdd0b90a89a48b29bec3faa85441, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9122968682167673762, guid: 57b2cdd0b90a89a48b29bec3faa85441, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9122968682167673762, guid: 57b2cdd0b90a89a48b29bec3faa85441, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9122968682167673762, guid: 57b2cdd0b90a89a48b29bec3faa85441, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 57b2cdd0b90a89a48b29bec3faa85441, type: 3}
 --- !u!1001 &950841193601979563
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2871,6 +3064,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1827589155}
     - target: {fileID: 1799480933201660225, guid: 8bb48de23cf1a6041bc7fe704614827f, type: 3}
+      propertyPath: solarPanel
+      value: 
+      objectReference: {fileID: 1794654611}
+    - target: {fileID: 1799480933201660225, guid: 8bb48de23cf1a6041bc7fe704614827f, type: 3}
+      propertyPath: waterPlant
+      value: 
+      objectReference: {fileID: 69036666}
+    - target: {fileID: 1799480933201660225, guid: 8bb48de23cf1a6041bc7fe704614827f, type: 3}
       propertyPath: bankOfSeeds
       value: 
       objectReference: {fileID: 726400279}
@@ -2878,6 +3079,14 @@ PrefabInstance:
       propertyPath: plantations
       value: 
       objectReference: {fileID: 1113930446}
+    - target: {fileID: 1799480933201660225, guid: 8bb48de23cf1a6041bc7fe704614827f, type: 3}
+      propertyPath: windTurbine
+      value: 
+      objectReference: {fileID: 1923387474}
+    - target: {fileID: 1799480933201660225, guid: 8bb48de23cf1a6041bc7fe704614827f, type: 3}
+      propertyPath: answerScript
+      value: 
+      objectReference: {fileID: 1176462227}
     - target: {fileID: 1799480933201660225, guid: 8bb48de23cf1a6041bc7fe704614827f, type: 3}
       propertyPath: seedResource
       value: 
@@ -3386,6 +3595,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 1.1185
       objectReference: {fileID: 0}
+    - target: {fileID: 2005424904061934253, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2005424904061934253, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2005424904061934253, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2418968710691348906, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
       propertyPath: m_text
       value: 'Solar Panel
@@ -3676,6 +3897,131 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: baa13c5a859002a47b8ba9dd54a1a629, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
+--- !u!1001 &5099133803399503887
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5099133804623858117, guid: 2cbe1c802d64c7a4d97d97dd8af2f368, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5099133804623858117, guid: 2cbe1c802d64c7a4d97d97dd8af2f368, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 283.45917
+      objectReference: {fileID: 0}
+    - target: {fileID: 5099133804623858117, guid: 2cbe1c802d64c7a4d97d97dd8af2f368, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 238.74622
+      objectReference: {fileID: 0}
+    - target: {fileID: 5099133804623858117, guid: 2cbe1c802d64c7a4d97d97dd8af2f368, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.8876724
+      objectReference: {fileID: 0}
+    - target: {fileID: 5099133804623858117, guid: 2cbe1c802d64c7a4d97d97dd8af2f368, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5099133804623858117, guid: 2cbe1c802d64c7a4d97d97dd8af2f368, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5099133804623858117, guid: 2cbe1c802d64c7a4d97d97dd8af2f368, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5099133804623858117, guid: 2cbe1c802d64c7a4d97d97dd8af2f368, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5099133804623858117, guid: 2cbe1c802d64c7a4d97d97dd8af2f368, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5099133804623858117, guid: 2cbe1c802d64c7a4d97d97dd8af2f368, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5099133804623858117, guid: 2cbe1c802d64c7a4d97d97dd8af2f368, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5099133804623858118, guid: 2cbe1c802d64c7a4d97d97dd8af2f368, type: 3}
+      propertyPath: Bees
+      value: 
+      objectReference: {fileID: 1693233334}
+    - target: {fileID: 5099133804623858118, guid: 2cbe1c802d64c7a4d97d97dd8af2f368, type: 3}
+      propertyPath: Rain
+      value: 
+      objectReference: {fileID: 2129924935}
+    - target: {fileID: 5099133804623858118, guid: 2cbe1c802d64c7a4d97d97dd8af2f368, type: 3}
+      propertyPath: quizz
+      value: 
+      objectReference: {fileID: 1164230663831448113}
+    - target: {fileID: 5099133804623858118, guid: 2cbe1c802d64c7a4d97d97dd8af2f368, type: 3}
+      propertyPath: infoTab
+      value: 
+      objectReference: {fileID: 623918674}
+    - target: {fileID: 5099133804623858118, guid: 2cbe1c802d64c7a4d97d97dd8af2f368, type: 3}
+      propertyPath: infoText
+      value: 
+      objectReference: {fileID: 1827589155}
+    - target: {fileID: 5099133804623858118, guid: 2cbe1c802d64c7a4d97d97dd8af2f368, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5099133804623858118, guid: 2cbe1c802d64c7a4d97d97dd8af2f368, type: 3}
+      propertyPath: solarPanel
+      value: 
+      objectReference: {fileID: 1794654611}
+    - target: {fileID: 5099133804623858118, guid: 2cbe1c802d64c7a4d97d97dd8af2f368, type: 3}
+      propertyPath: waterPlant
+      value: 
+      objectReference: {fileID: 69036666}
+    - target: {fileID: 5099133804623858118, guid: 2cbe1c802d64c7a4d97d97dd8af2f368, type: 3}
+      propertyPath: bankOfSeeds
+      value: 
+      objectReference: {fileID: 726400279}
+    - target: {fileID: 5099133804623858118, guid: 2cbe1c802d64c7a4d97d97dd8af2f368, type: 3}
+      propertyPath: plantations
+      value: 
+      objectReference: {fileID: 1113930446}
+    - target: {fileID: 5099133804623858118, guid: 2cbe1c802d64c7a4d97d97dd8af2f368, type: 3}
+      propertyPath: windTurbine
+      value: 
+      objectReference: {fileID: 1923387474}
+    - target: {fileID: 5099133804623858118, guid: 2cbe1c802d64c7a4d97d97dd8af2f368, type: 3}
+      propertyPath: answerScript
+      value: 
+      objectReference: {fileID: 1176462227}
+    - target: {fileID: 5099133804623858118, guid: 2cbe1c802d64c7a4d97d97dd8af2f368, type: 3}
+      propertyPath: seedResource
+      value: 
+      objectReference: {fileID: 222760300}
+    - target: {fileID: 5099133804623858118, guid: 2cbe1c802d64c7a4d97d97dd8af2f368, type: 3}
+      propertyPath: woodResource
+      value: 
+      objectReference: {fileID: 814900402}
+    - target: {fileID: 5099133804623858118, guid: 2cbe1c802d64c7a4d97d97dd8af2f368, type: 3}
+      propertyPath: mineralsResource
+      value: 
+      objectReference: {fileID: 1866982325}
+    - target: {fileID: 5099133804623858118, guid: 2cbe1c802d64c7a4d97d97dd8af2f368, type: 3}
+      propertyPath: acidWaterResource
+      value: 
+      objectReference: {fileID: 1359402101}
+    - target: {fileID: 5099133804623858118, guid: 2cbe1c802d64c7a4d97d97dd8af2f368, type: 3}
+      propertyPath: spawnedImagePrefab
+      value: 
+      objectReference: {fileID: 1176255287}
+    - target: {fileID: 5099133804623858119, guid: 2cbe1c802d64c7a4d97d97dd8af2f368, type: 3}
+      propertyPath: m_Name
+      value: GameController
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2cbe1c802d64c7a4d97d97dd8af2f368, type: 3}
 --- !u!1001 &5796013917449072592
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3780,6 +4126,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1164230663831448113}
     - target: {fileID: 5796013917938749825, guid: 103ff1680a7a5e344b8b625cfc9714c6, type: 3}
+      propertyPath: solarPanel
+      value: 
+      objectReference: {fileID: 1794654611}
+    - target: {fileID: 5796013917938749825, guid: 103ff1680a7a5e344b8b625cfc9714c6, type: 3}
+      propertyPath: waterPlant
+      value: 
+      objectReference: {fileID: 69036666}
+    - target: {fileID: 5796013917938749825, guid: 103ff1680a7a5e344b8b625cfc9714c6, type: 3}
       propertyPath: bankOfSeeds
       value: 
       objectReference: {fileID: 726400279}
@@ -3787,6 +4141,14 @@ PrefabInstance:
       propertyPath: plantations
       value: 
       objectReference: {fileID: 1113930446}
+    - target: {fileID: 5796013917938749825, guid: 103ff1680a7a5e344b8b625cfc9714c6, type: 3}
+      propertyPath: windTurbine
+      value: 
+      objectReference: {fileID: 1923387474}
+    - target: {fileID: 5796013917938749825, guid: 103ff1680a7a5e344b8b625cfc9714c6, type: 3}
+      propertyPath: answerScript
+      value: 
+      objectReference: {fileID: 1176462227}
     - target: {fileID: 5796013917938749825, guid: 103ff1680a7a5e344b8b625cfc9714c6, type: 3}
       propertyPath: seedResource
       value: 

@@ -7,6 +7,13 @@ public class AnswerScript : MonoBehaviour
     public bool isCorrect = false;
     public QuizzManager quizzManager;
 
+    public List<GameController> gameControllers;
+    private void Start()
+    {
+        // Encontrar e armazenar todos os objetos GameController na cena
+        gameControllers = new List<GameController>(FindObjectsOfType<GameController>());
+    }
+
     public void Answer()
     {
         if (isCorrect)
@@ -27,37 +34,59 @@ public class AnswerScript : MonoBehaviour
             //20%
             if(quizzManager.questionsRight == 2)
             {
-                //enable wind turbine
+                foreach (GameController controller in gameControllers)
+                {
+                    //enable wind turbine
+                    controller.unlockWindTurbine = true;
+                }
             }
 
             //30%
             if(quizzManager.questionsRight==3)
             {
                 //enable solar panel
+                foreach (GameController controller in gameControllers)
+                {
+                    controller.unlockSolarPanel = true;
+                }
             }
 
             //50%
             if(quizzManager.questionsRight==5)
             {
                 //enable water plant
+                foreach (GameController controller in gameControllers)
+                {
+                    controller.unlockWaterPlant = true;
+                }
             }
 
             //70%
             if (quizzManager.questionsRight == 7)
             {
                 //enable bees and animals
+                foreach (GameController controller in gameControllers)
+                {
+                    controller.unlockBees = true;
+                    controller.unlockAnimals = true;
+                }
             }
 
             //90%
             if (quizzManager.questionsRight == 9)
             {
                 //enable fruit trees
+                foreach (GameController controller in gameControllers)
+                {
+                    controller.unlockFruitTrees = true;
+                }
             }
 
             //100%
             if (quizzManager.questionsRight == 10)
             {
                 //show victory panel
+                //showVictoryPanel()
             }
 
             StartCoroutine(quizzManager.ShowInfoAboutQuestion(isCorrect));
