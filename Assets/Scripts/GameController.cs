@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -48,6 +49,13 @@ public class GameController : MonoBehaviour
     public bool unlockBees = false;
     public bool unlockAnimals = false;
     public bool unlockFruitTrees = false;
+
+    public static int maxWindTurbines = 4;
+    public static int maxSolarPanels = 7;
+    public static int maxWaterPlants = 1;
+
+    public Vector2[] windTurbinePositions = new Vector2[maxWindTurbines];
+    public Vector2[] solarPanelsPositions = new Vector2[maxSolarPanels];
 
     // Start is called before the first frame update
     void Start()
@@ -323,6 +331,13 @@ public class GameController : MonoBehaviour
 
     public void clickWindTurbineButton()
     {
+        if (maxWindTurbines == 0)
+        {
+            StartCoroutine(InfoTabHelper.Instance.ShowInfo("MAX WIND TURBINES REACHED!"));
+            return;
+        }
+        maxWindTurbines--;
+
         //consume 1 wood and 1 mineral
         int woodValue = -1;
         int mineralValue = -1;
@@ -355,7 +370,7 @@ public class GameController : MonoBehaviour
         StartCoroutine(InfoTabHelper.Instance.ShowInfo(text));
 
         /////spawn the wind turbine animation randomly in the map
-        Vector2 randomPosition = GetRandomPosition();
+        Vector2 randomPosition = GetWindTurbinePosition(maxWindTurbines);
         Instantiate(windTurbinePrefab, randomPosition, Quaternion.identity, transform.parent);
 
 
@@ -380,6 +395,13 @@ public class GameController : MonoBehaviour
 
     public void clickSolarPanelButton()
     {
+        if (maxSolarPanels == 0)
+        {
+            StartCoroutine(InfoTabHelper.Instance.ShowInfo("MAX SOLAR PANELS REACHED!"));
+            return;
+        }
+        maxSolarPanels--;
+
         //consume 5 wood and 1 mineral
         int woodValue = -5;
         int mineralValue = -1;
@@ -411,8 +433,8 @@ public class GameController : MonoBehaviour
 
         StartCoroutine(InfoTabHelper.Instance.ShowInfo(text));
 
-        /////spawn the wind turbine animation randomly in the map
-        Vector2 randomPosition = GetRandomPosition();
+        //instantiate object on the map
+        Vector2 randomPosition = GetSolarPanelPosition();
         Instantiate(solarPanelPrefab, randomPosition, Quaternion.identity, transform.parent);
 
         //ADD 5 ENERGY
@@ -435,6 +457,13 @@ public class GameController : MonoBehaviour
 
     public void clickWaterPlantButton()
     {
+        if (maxWaterPlants == 0)
+        {
+            StartCoroutine(InfoTabHelper.Instance.ShowInfo("MAX WATER PLANTS REACHED!"));
+            return;
+        }
+        maxWaterPlants--;
+
         //consume 5 wood, 1 mineral and 8 energy?
         int woodValue = -5;
         int mineralValue = -1;
@@ -480,8 +509,8 @@ public class GameController : MonoBehaviour
         StartCoroutine(InfoTabHelper.Instance.ShowInfo(text));
 
         /////spawn the solar panel animation randomly in the map
-        Vector2 randomPosition = GetRandomPosition();
-        Instantiate(solarPanelPrefab, randomPosition, Quaternion.identity, transform.parent);
+        Vector2 randomPosition = GetWaterPlantPosition();
+        Instantiate(waterPlantPrefab, randomPosition, Quaternion.identity, transform.parent);
 
         //Convert Acid Water to clean Water
         int acidWaterValue = ResourceManager.Instance.GetResourceByType(ResourceType.AcidWater).Quantity;
@@ -502,12 +531,29 @@ public class GameController : MonoBehaviour
         {
             acidWaterResource.alpha = 0.5f;
         }else acidWaterResource.alpha = 1f;
-        var acidWaterResourceTxt = cleanWaterResource.GetComponentsInChildren<TMP_Text>();
+        var acidWaterResourceTxt = acidWaterResource.GetComponentsInChildren<TMP_Text>();
 
         acidWaterResourceTxt[1].text = $"{newAcidWaterValue}";
 
         StartCoroutine(InfoTabHelper.Instance.ShowInfo(text)); //-> only this message is shown -_-
         /////////
+    }
+
+    private Vector2 GetWaterPlantPosition()
+    {
+        float x = 600f;
+        float y = 230f;
+        return new Vector2(x, y);
+    }
+
+    private Vector2 GetSolarPanelPosition()
+    {
+        return this.solarPanelsPositions[maxSolarPanels];
+    }
+
+    private Vector2 GetWindTurbinePosition(int maxWindTurbines)
+    {
+        return this.windTurbinePositions[maxWindTurbines];
     }
 
     private Vector2 GetRandomPosition()
@@ -516,4 +562,6 @@ public class GameController : MonoBehaviour
         float y = UnityEngine.Random.Range(0f, 470/4f);
         return new Vector2(x, y);
     }
+
+
 }
