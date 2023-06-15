@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class QuizzManager : MonoBehaviour
 {
-    public GameObject quizz;
+    public CanvasGroup quizz;
     public List<QuestionAndAnswer> QuestionAndAnswers;
     public GameObject questionTab;
     public GameObject[] options;
@@ -20,9 +20,10 @@ public class QuizzManager : MonoBehaviour
 
     public ParticleSystem Rain;
     public ParticleSystem Bees;
-    public int acidRainValue = 25;
+    public int acidRainValue = 50;
     public CanvasGroup acidWaterResource;
     public Sprite acidRainBg;
+    private bool isFirstQuestion = true;
 
     private void Start()
     {
@@ -97,18 +98,23 @@ public class QuizzManager : MonoBehaviour
         showQuizzComponents(false);
 
         // Wait for 1 minute to get the next(if got right) or same(if got wrong) question
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(25f);
 
         this.generateQuestion();
     }
 
-    private void showQuizzComponents(bool v)
+    private void showQuizzComponents(bool isEnabled)
     {
+        if (isEnabled)
+        {
+            quizz.alpha = 1f;
+        }
+
         var components = gameObject.GetComponents<Image>();
 
         foreach (var component in components)
         {
-            component.enabled = v;
+            component.enabled = isEnabled;
         }
     }
 

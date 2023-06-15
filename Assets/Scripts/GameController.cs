@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -234,25 +233,6 @@ public class GameController : MonoBehaviour
     {
         yield return new WaitForSeconds(5f);
         quizz.SetActive(true);
-    }
-
-    //TODO check, not working :(
-    public void ClickSmallPlant()
-    {
-        var woodValue = 1;
-
-        //message appears indicating that some resources were gained
-        var text = "You gained " + woodValue + " wood!" + "\n" + "Good Luck!";
-
-        woodResource.alpha = 1f;
-        var newQuantity = ResourceManager.Instance.UpdateByName(ResourceType.Wood, woodValue);
-        var woodQuantityText = woodResource.GetComponentsInChildren<TMP_Text>();
-        var woodBtnResource = woodResource.GetComponentInChildren<Button>();
-        woodBtnResource.interactable = true;
-
-        woodQuantityText[1].text = $"{newQuantity}";
-
-        StartCoroutine(InfoTabHelper.Instance.ShowInfo(text));
     }
 
     public void clickBankOfResources()

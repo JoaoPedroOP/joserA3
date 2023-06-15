@@ -48,6 +48,8 @@ public class AnswerScript : MonoBehaviour
                 foreach (GameController controller in gameControllers)
                 {
                     controller.unlockSolarPanel = true;
+                    //enable rain for some seconds
+                    StartCoroutine(quizzManager.MakeAcidRain());
                 }
             }
 
