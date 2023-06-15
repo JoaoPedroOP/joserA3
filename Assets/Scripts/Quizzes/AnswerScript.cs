@@ -63,6 +63,16 @@ public class AnswerScript : MonoBehaviour
                 }
             }
 
+            //60%
+            if (quizzManager.questionsRight == 6)
+            {
+                //change scenario
+                foreach (GameController controller in gameControllers)
+                {
+                    controller.ChangeScenaryToGreen();
+                }
+            }
+
             //80%
             if (quizzManager.questionsRight == 8)
             {

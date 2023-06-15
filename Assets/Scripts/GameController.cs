@@ -38,6 +38,7 @@ public class GameController : MonoBehaviour
     public ParticleSystem Rain;
     public ParticleSystem Bees;
     public Sprite cleanWaterBg;
+    public Sprite greenScenarioBg;
 
     public Vector2 scaleRange = new Vector2(1f, 100f);
 
@@ -444,6 +445,11 @@ public class GameController : MonoBehaviour
 
         StartCoroutine(InfoTabHelper.Instance.ShowInfo(text)); //-> only this message is shown -_-
         /////////
+    }
+
+    public void ChangeScenaryToGreen()
+    {
+        GameObject.Find("Panel").GetComponent<Image>().sprite = this.greenScenarioBg;
     }
 
     public void clickWaterPlantButton()
