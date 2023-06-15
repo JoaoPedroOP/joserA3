@@ -12,7 +12,7 @@ public class ResourceManager : MonoBehaviour
         {
             Id = 0,
             Type = ResourceType.Minerals,
-            Quantity = 10,
+            Quantity = 50,
         },
         new ResourceModel
         {
@@ -28,7 +28,8 @@ public class ResourceManager : MonoBehaviour
         {
             Id = 3,
             Type = ResourceType.Wood,
-            Quantity = 10,
+            // TODO remove, for debug only
+            Quantity = 20,
         },
         new ResourceModel
         {

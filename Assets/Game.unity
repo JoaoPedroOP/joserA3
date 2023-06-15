@@ -169,6 +169,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2735667102456631007, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
   m_PrefabInstance: {fileID: 3732644008640011850}
   m_PrefabAsset: {fileID: 0}
+--- !u!225 &69036667 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 5869588385102915570, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
+  m_PrefabInstance: {fileID: 3732644008640011850}
+  m_PrefabAsset: {fileID: 0}
 --- !u!225 &135174360 stripped
 CanvasGroup:
   m_CorrespondingSourceObject: {fileID: 8783535552230171728, guid: 5d79fa0fdcd9d9843b0eec3aefa872c5, type: 3}
@@ -950,99 +955,99 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 192405550098573488, guid: 56fe320021b10024ab702b2033b22c9c, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 192405550098573488, guid: 56fe320021b10024ab702b2033b22c9c, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 192405550098573488, guid: 56fe320021b10024ab702b2033b22c9c, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 85
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 192405550098573488, guid: 56fe320021b10024ab702b2033b22c9c, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 85
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 192405550098573488, guid: 56fe320021b10024ab702b2033b22c9c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 105.40994
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 192405550098573488, guid: 56fe320021b10024ab702b2033b22c9c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -162.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 192405550492002613, guid: 56fe320021b10024ab702b2033b22c9c, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 192405550492002613, guid: 56fe320021b10024ab702b2033b22c9c, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 192405550492002613, guid: 56fe320021b10024ab702b2033b22c9c, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 85
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 192405550492002613, guid: 56fe320021b10024ab702b2033b22c9c, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 85
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 192405550492002613, guid: 56fe320021b10024ab702b2033b22c9c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 345.40994
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 192405550492002613, guid: 56fe320021b10024ab702b2033b22c9c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -42.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 192405551156605455, guid: 56fe320021b10024ab702b2033b22c9c, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 192405551156605455, guid: 56fe320021b10024ab702b2033b22c9c, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 192405551156605455, guid: 56fe320021b10024ab702b2033b22c9c, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 85
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 192405551156605455, guid: 56fe320021b10024ab702b2033b22c9c, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 85
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 192405551156605455, guid: 56fe320021b10024ab702b2033b22c9c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 225.40994
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 192405551156605455, guid: 56fe320021b10024ab702b2033b22c9c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -42.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 192405551215498788, guid: 56fe320021b10024ab702b2033b22c9c, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 192405551215498788, guid: 56fe320021b10024ab702b2033b22c9c, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 192405551215498788, guid: 56fe320021b10024ab702b2033b22c9c, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 85
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 192405551215498788, guid: 56fe320021b10024ab702b2033b22c9c, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 85
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 192405551215498788, guid: 56fe320021b10024ab702b2033b22c9c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 105.40994
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 192405551215498788, guid: 56fe320021b10024ab702b2033b22c9c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -42.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4008358094217887853, guid: 56fe320021b10024ab702b2033b22c9c, type: 3}
       propertyPath: m_fontColor.a
@@ -1238,6 +1243,7 @@ MonoBehaviour:
   quizz: {fileID: 1164230663831448113}
   Rain: {fileID: 2129924935}
   Bees: {fileID: 1693233334}
+  cleanWaterBg: {fileID: 0}
   scaleRange: {x: 1, y: 100}
   unlockWaterPlant: 0
   unlockSolarPanel: 0
@@ -1381,9 +1387,9 @@ MonoBehaviour:
   windTurbinePrefab: {fileID: 1463620277}
   solarPanelPrefab: {fileID: 4548371142097518656, guid: 0795461354f1f0f4fb8e6dd85f614939, type: 3}
   waterPlantPrefab: {fileID: 824960076}
-  windTurbine: {fileID: 1923387474}
-  solarPanel: {fileID: 1794654611}
-  waterPlant: {fileID: 69036666}
+  windTurbine: {fileID: 1923387475}
+  solarPanel: {fileID: 1794654613}
+  waterPlant: {fileID: 69036667}
   answerScript: {fileID: 1176462227}
   infoTab: {fileID: 623918674}
   infoText: {fileID: 1827589155}
@@ -1396,6 +1402,7 @@ MonoBehaviour:
   quizz: {fileID: 1164230663831448113}
   Rain: {fileID: 2129924935}
   Bees: {fileID: 1693233334}
+  cleanWaterBg: {fileID: 21300000, guid: b320d89c14e86744b98937ebe08e5333, type: 3}
   scaleRange: {x: 1, y: 100}
   unlockWaterPlant: 0
   unlockSolarPanel: 0
@@ -1435,9 +1442,9 @@ MonoBehaviour:
   windTurbinePrefab: {fileID: 1022723970872211194, guid: c9c7c499328ac8a4986155b60dc748b6, type: 3}
   solarPanelPrefab: {fileID: 4548371142097518656, guid: 0795461354f1f0f4fb8e6dd85f614939, type: 3}
   waterPlantPrefab: {fileID: 824960076}
-  windTurbine: {fileID: 1923387474}
-  solarPanel: {fileID: 1794654611}
-  waterPlant: {fileID: 69036666}
+  windTurbine: {fileID: 1923387475}
+  solarPanel: {fileID: 1794654613}
+  waterPlant: {fileID: 69036667}
   answerScript: {fileID: 1176462227}
   infoTab: {fileID: 623918674}
   infoText: {fileID: 1827589155}
@@ -1450,6 +1457,7 @@ MonoBehaviour:
   quizz: {fileID: 1164230663831448113}
   Rain: {fileID: 2129924935}
   Bees: {fileID: 1693233334}
+  cleanWaterBg: {fileID: 0}
   scaleRange: {x: 1, y: 100}
   unlockWaterPlant: 0
   unlockSolarPanel: 0
@@ -1713,6 +1721,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 783518710916852237, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
   m_PrefabInstance: {fileID: 3732644008640011850}
   m_PrefabAsset: {fileID: 0}
+--- !u!225 &1794654613 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 4469126627345685619, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
+  m_PrefabInstance: {fileID: 3732644008640011850}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1827589155 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5796013919116682227, guid: 103ff1680a7a5e344b8b625cfc9714c6, type: 3}
@@ -1732,6 +1745,11 @@ CanvasGroup:
 --- !u!1 &1923387474 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3559131852704561680, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
+  m_PrefabInstance: {fileID: 3732644008640011850}
+  m_PrefabAsset: {fileID: 0}
+--- !u!225 &1923387475 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 8887086583206215099, guid: 15796bfd73bcf62459f3e3fa909f7a06, type: 3}
   m_PrefabInstance: {fileID: 3732644008640011850}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1991288049
@@ -2414,6 +2432,26 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1164230663886502059, guid: 4d58f4b97278188468d5c1e45b18ca2d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1164230663886502059, guid: 4d58f4b97278188468d5c1e45b18ca2d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1164230663886502059, guid: 4d58f4b97278188468d5c1e45b18ca2d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 11500000, guid: 27650034ff5a391468b297153ea53c47, type: 3}
+    - target: {fileID: 1164230663886502059, guid: 4d58f4b97278188468d5c1e45b18ca2d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1164230663886502059, guid: 4d58f4b97278188468d5c1e45b18ca2d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1164230663986653314, guid: 4d58f4b97278188468d5c1e45b18ca2d, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -2676,6 +2714,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
+      propertyPath: Bees
+      value: 
+      objectReference: {fileID: 1693233334}
     - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
       propertyPath: Rain
       value: 
@@ -3132,11 +3174,11 @@ PrefabInstance:
     - target: {fileID: 1799480933201660225, guid: 8bb48de23cf1a6041bc7fe704614827f, type: 3}
       propertyPath: solarPanel
       value: 
-      objectReference: {fileID: 1794654611}
+      objectReference: {fileID: 1794654613}
     - target: {fileID: 1799480933201660225, guid: 8bb48de23cf1a6041bc7fe704614827f, type: 3}
       propertyPath: waterPlant
       value: 
-      objectReference: {fileID: 69036666}
+      objectReference: {fileID: 69036667}
     - target: {fileID: 1799480933201660225, guid: 8bb48de23cf1a6041bc7fe704614827f, type: 3}
       propertyPath: bankOfSeeds
       value: 
@@ -3148,11 +3190,15 @@ PrefabInstance:
     - target: {fileID: 1799480933201660225, guid: 8bb48de23cf1a6041bc7fe704614827f, type: 3}
       propertyPath: windTurbine
       value: 
-      objectReference: {fileID: 1923387474}
+      objectReference: {fileID: 1923387475}
     - target: {fileID: 1799480933201660225, guid: 8bb48de23cf1a6041bc7fe704614827f, type: 3}
       propertyPath: answerScript
       value: 
       objectReference: {fileID: 1176462227}
+    - target: {fileID: 1799480933201660225, guid: 8bb48de23cf1a6041bc7fe704614827f, type: 3}
+      propertyPath: cleanWaterBg
+      value: 
+      objectReference: {fileID: 21300000, guid: b320d89c14e86744b98937ebe08e5333, type: 3}
     - target: {fileID: 1799480933201660225, guid: 8bb48de23cf1a6041bc7fe704614827f, type: 3}
       propertyPath: seedResource
       value: 
@@ -4145,11 +4191,11 @@ PrefabInstance:
     - target: {fileID: 5099133804623858118, guid: 2cbe1c802d64c7a4d97d97dd8af2f368, type: 3}
       propertyPath: solarPanel
       value: 
-      objectReference: {fileID: 1794654611}
+      objectReference: {fileID: 1794654613}
     - target: {fileID: 5099133804623858118, guid: 2cbe1c802d64c7a4d97d97dd8af2f368, type: 3}
       propertyPath: waterPlant
       value: 
-      objectReference: {fileID: 69036666}
+      objectReference: {fileID: 69036667}
     - target: {fileID: 5099133804623858118, guid: 2cbe1c802d64c7a4d97d97dd8af2f368, type: 3}
       propertyPath: bankOfSeeds
       value: 
@@ -4161,11 +4207,15 @@ PrefabInstance:
     - target: {fileID: 5099133804623858118, guid: 2cbe1c802d64c7a4d97d97dd8af2f368, type: 3}
       propertyPath: windTurbine
       value: 
-      objectReference: {fileID: 1923387474}
+      objectReference: {fileID: 1923387475}
     - target: {fileID: 5099133804623858118, guid: 2cbe1c802d64c7a4d97d97dd8af2f368, type: 3}
       propertyPath: answerScript
       value: 
       objectReference: {fileID: 1176462227}
+    - target: {fileID: 5099133804623858118, guid: 2cbe1c802d64c7a4d97d97dd8af2f368, type: 3}
+      propertyPath: cleanWaterBg
+      value: 
+      objectReference: {fileID: 21300000, guid: b320d89c14e86744b98937ebe08e5333, type: 3}
     - target: {fileID: 5099133804623858118, guid: 2cbe1c802d64c7a4d97d97dd8af2f368, type: 3}
       propertyPath: seedResource
       value: 
@@ -4406,11 +4456,11 @@ PrefabInstance:
     - target: {fileID: 5796013917938749825, guid: 103ff1680a7a5e344b8b625cfc9714c6, type: 3}
       propertyPath: solarPanel
       value: 
-      objectReference: {fileID: 1794654611}
+      objectReference: {fileID: 1794654613}
     - target: {fileID: 5796013917938749825, guid: 103ff1680a7a5e344b8b625cfc9714c6, type: 3}
       propertyPath: waterPlant
       value: 
-      objectReference: {fileID: 69036666}
+      objectReference: {fileID: 69036667}
     - target: {fileID: 5796013917938749825, guid: 103ff1680a7a5e344b8b625cfc9714c6, type: 3}
       propertyPath: bankOfSeeds
       value: 
@@ -4422,11 +4472,15 @@ PrefabInstance:
     - target: {fileID: 5796013917938749825, guid: 103ff1680a7a5e344b8b625cfc9714c6, type: 3}
       propertyPath: windTurbine
       value: 
-      objectReference: {fileID: 1923387474}
+      objectReference: {fileID: 1923387475}
     - target: {fileID: 5796013917938749825, guid: 103ff1680a7a5e344b8b625cfc9714c6, type: 3}
       propertyPath: answerScript
       value: 
       objectReference: {fileID: 1176462227}
+    - target: {fileID: 5796013917938749825, guid: 103ff1680a7a5e344b8b625cfc9714c6, type: 3}
+      propertyPath: cleanWaterBg
+      value: 
+      objectReference: {fileID: 21300000, guid: b320d89c14e86744b98937ebe08e5333, type: 3}
     - target: {fileID: 5796013917938749825, guid: 103ff1680a7a5e344b8b625cfc9714c6, type: 3}
       propertyPath: seedResource
       value: 
@@ -4451,6 +4505,14 @@ PrefabInstance:
       propertyPath: mineralsResource
       value: 
       objectReference: {fileID: 1866982325}
+    - target: {fileID: 5796013917938749825, guid: 103ff1680a7a5e344b8b625cfc9714c6, type: 3}
+      propertyPath: solarPanelPrefab
+      value: 
+      objectReference: {fileID: 4548371142097518656, guid: 0795461354f1f0f4fb8e6dd85f614939, type: 3}
+    - target: {fileID: 5796013917938749825, guid: 103ff1680a7a5e344b8b625cfc9714c6, type: 3}
+      propertyPath: waterPlantPrefab
+      value: 
+      objectReference: {fileID: 6139676598259735402, guid: 798de6e0d76e0d54b868fe258dcb363a, type: 3}
     - target: {fileID: 5796013917938749825, guid: 103ff1680a7a5e344b8b625cfc9714c6, type: 3}
       propertyPath: acidWaterResource
       value: 

@@ -20,9 +20,9 @@ public class GameController : MonoBehaviour
     public GameObject waterPlantPrefab;
 
     //buildings
-    public GameObject windTurbine;
-    public GameObject solarPanel;
-    public GameObject waterPlant;
+    public CanvasGroup windTurbine;
+    public CanvasGroup solarPanel;
+    public CanvasGroup waterPlant;
     public AnswerScript answerScript;
 
     public Image infoTab;
@@ -37,6 +37,7 @@ public class GameController : MonoBehaviour
     public GameObject quizz;
     public ParticleSystem Rain;
     public ParticleSystem Bees;
+    public Sprite cleanWaterBg;
 
     public Vector2 scaleRange = new Vector2(1f, 100f);
 
@@ -82,13 +83,10 @@ public class GameController : MonoBehaviour
         var plantBtnImage = plantBtn.GetComponentInChildren<UnityEngine.UI.Image>();
 
         var windTurbineBtn = windTurbine.GetComponentInChildren<Button>();
-        var windTurbineImage = windTurbineBtn.GetComponentInChildren<UnityEngine.UI.Image>();
 
         var solarPanelBtn = solarPanel.GetComponentInChildren<Button>();
-        var solarPanelImage = solarPanelBtn.GetComponentInChildren<UnityEngine.UI.Image>();
 
         var waterPlantBtn = waterPlant.GetComponentInChildren<Button>();
-        var waterPlantImage = waterPlantBtn.GetComponentInChildren<UnityEngine.UI.Image>();
 
         if (!hasPlantResources())
         {
@@ -108,46 +106,34 @@ public class GameController : MonoBehaviour
         if (!hasWindTurbineResources())
         {
             windTurbineBtn.enabled = false;
-            Color currentColor = windTurbineImage.color;
-            currentColor.a = 0.5f;
-            windTurbineImage.color = currentColor;
+            windTurbine.alpha = 0.5f;
         }
         else
         {
             windTurbineBtn.enabled = true;
-            Color currentColor = windTurbineImage.color;
-            currentColor.a = 1f;
-            windTurbineImage.color = currentColor;
+            windTurbine.alpha = 1f;
         }
 
         if (!hasSolarPanelResources())
         {
             solarPanelBtn.enabled = false;
-            Color currentColor = solarPanelImage.color;
-            currentColor.a = 0.5f;
-            solarPanelImage.color = currentColor;
+            solarPanel.alpha = 0.5f;
         }
         else
         {
             solarPanelBtn.enabled = true;
-            Color currentColor = solarPanelImage.color;
-            currentColor.a = 1f;
-            solarPanelImage.color = currentColor;
+            solarPanel.alpha = 1f;
         }
 
         if (!hasWaterPlantResources())
         {
             waterPlantBtn.enabled = false;
-            Color currentColor = waterPlantImage.color;
-            currentColor.a = 0.5f;
-            waterPlantImage.color = currentColor;
+            waterPlant.alpha = 0.5f;
         }
         else
         {
             waterPlantBtn.enabled = true;
-            Color currentColor = waterPlantImage.color;
-            currentColor.a = 1f;
-            waterPlantImage.color = currentColor;
+            waterPlant.alpha = 1f;
         }
     }
 
@@ -358,7 +344,7 @@ public class GameController : MonoBehaviour
 
 
         //updating the mineral quantity on the manager
-        var newMineralValue = ResourceManager.Instance.UpdateByName(ResourceType.AcidWater, mineralValue);
+        var newMineralValue = ResourceManager.Instance.UpdateByName(ResourceType.Minerals, mineralValue);
         if (newMineralValue == 0)
         {
             mineralsResource.alpha = 0.5f;
@@ -372,7 +358,6 @@ public class GameController : MonoBehaviour
         /////spawn the wind turbine animation randomly in the map
         Vector2 randomPosition = GetWindTurbinePosition(maxWindTurbines);
         Instantiate(windTurbinePrefab, randomPosition, Quaternion.identity, transform.parent);
-
 
         //ADD 3 ENERGY
         int energyValue = 3;
@@ -463,6 +448,8 @@ public class GameController : MonoBehaviour
             return;
         }
         maxWaterPlants--;
+
+        GameObject.Find("Panel").GetComponent<Image>().sprite = this.cleanWaterBg;
 
         //consume 5 wood, 1 mineral and 8 energy?
         int woodValue = -5;
@@ -558,10 +545,8 @@ public class GameController : MonoBehaviour
 
     private Vector2 GetRandomPosition()
     {
-        float x = UnityEngine.Random.Range(-10f, 870/4f); 
-        float y = UnityEngine.Random.Range(0f, 470/4f);
+        float x = UnityEngine.Random.Range(-10f, 870f); 
+        float y = UnityEngine.Random.Range(0f, 470f);
         return new Vector2(x, y);
     }
-
-
 }

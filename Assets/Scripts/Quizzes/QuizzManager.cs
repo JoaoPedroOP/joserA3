@@ -19,6 +19,7 @@ public class QuizzManager : MonoBehaviour
     public Text QuestionText;
 
     public ParticleSystem Rain;
+    public ParticleSystem Bees;
     public int acidRainValue = 25;
     public CanvasGroup acidWaterResource;
     public Sprite acidRainBg;
@@ -26,8 +27,9 @@ public class QuizzManager : MonoBehaviour
     private void Start()
     {
         this.Rain.Stop();
+        this.Bees.Stop();
         responseInformation.SetActive(false);
-        //controll to define when to generate the questions
+        //control to define when to generate the questions
         generateQuestion();
     }
 
@@ -87,6 +89,8 @@ public class QuizzManager : MonoBehaviour
             //show the information associated to the answer;
             responseInformation.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text
                 = QuestionAndAnswers[index].AnswerInformation;
+
+            this.Correct();
         }
 
         //hide the quizz gameObject
@@ -95,21 +99,17 @@ public class QuizzManager : MonoBehaviour
         // Wait for 1 minute to get the next(if got right) or same(if got wrong) question
         yield return new WaitForSeconds(5f);
 
-        if (isCorrect)
-        {
-            this.Correct();
-        }
         this.generateQuestion();
     }
 
     private void showQuizzComponents(bool v)
     {
-        Image[] components = gameObject.GetComponents<Image>();
+        var components = gameObject.GetComponents<Image>();
 
-        //foreach (Image component in components)
-        //{
-        //    component. = false;
-        //}
+        foreach (var component in components)
+        {
+            component.enabled = v;
+        }
     }
 
     public void ShowquestionTabAndAnswerBtns(bool state)
@@ -146,7 +146,9 @@ public class QuizzManager : MonoBehaviour
 
     internal IEnumerator MakeBees()
     {
-        // TODO implement
-        throw new NotImplementedException();
+        this.Bees.Play();
+        // Wait for 15 seconds
+        yield return new WaitForSeconds(15f);
+        this.Bees.Stop();
     }
 }

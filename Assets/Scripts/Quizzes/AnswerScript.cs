@@ -61,12 +61,13 @@ public class AnswerScript : MonoBehaviour
                 }
             }
 
-            //70%
-            if (quizzManager.questionsRight == 7)
+            //80%
+            if (quizzManager.questionsRight == 8)
             {
                 //enable bees and animals
                 foreach (GameController controller in gameControllers)
                 {
+                    StartCoroutine(quizzManager.MakeBees());
                     controller.unlockBees = true;
                     controller.unlockAnimals = true;
                 }
@@ -90,14 +91,6 @@ public class AnswerScript : MonoBehaviour
             }
 
             StartCoroutine(quizzManager.ShowInfoAboutQuestion(isCorrect));
-           
-            if (quizzManager.questionsRight == 9)
-            {
-                //enable rain for some seconds
-                StartCoroutine(quizzManager.MakeBees());
-            }
-
-            
         }
         else
         {
