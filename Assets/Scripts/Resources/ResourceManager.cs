@@ -27,9 +27,7 @@ public class ResourceManager : MonoBehaviour
         new ResourceModel
         {
             Id = 3,
-            Type = ResourceType.Wood,
-            // TODO remove, for debug only
-            Quantity = 20,
+            Type = ResourceType.Wood
         },
         new ResourceModel
         {
