@@ -12,6 +12,7 @@ public class GameController : MonoBehaviour
     //plants 
     public GameObject plantations;
     public GameObject spawnedImagePrefab;
+    public GameObject treePrefab;
 
     //buildings prefabs
     public GameObject windTurbinePrefab;
@@ -56,6 +57,8 @@ public class GameController : MonoBehaviour
 
     public Vector2[] windTurbinePositions = new Vector2[maxWindTurbines];
     public Vector2[] solarPanelsPositions = new Vector2[maxSolarPanels];
+
+    private bool isCleanWaterAvailable = false;
 
     // Start is called before the first frame update
     void Start()
@@ -213,15 +216,18 @@ public class GameController : MonoBehaviour
 
     private bool hasPlantResources()
     {
-        int seedValue = 1;
-        int acidWaterValue = 5;
+        var seedValue = 1;
+        var waterValue = 5;
 
         var currentAcidWater = ResourceManager.Instance.
             GetResourceByType(ResourceType.AcidWater);
+        var currentCleanWater = ResourceManager.Instance.
+            GetResourceByType(ResourceType.CleanWater);
         var currentSeeds = ResourceManager.Instance.
             GetResourceByType(ResourceType.Seeds);
 
-        if(currentAcidWater.Quantity >= acidWaterValue && currentSeeds.Quantity >= seedValue)
+        if(currentAcidWater.Quantity >= waterValue && currentSeeds.Quantity >= seedValue ||
+            currentCleanWater.Quantity >= waterValue && currentSeeds.Quantity >= seedValue)
         {
             return true;
         }
@@ -278,27 +284,46 @@ public class GameController : MonoBehaviour
 
         seedQuantityText[1].text = $"{newSeedQuantity}";
 
-        var newWaterQuantity = ResourceManager.Instance.UpdateByName(ResourceType.AcidWater, waterValue);
-        if (newWaterQuantity == 0)
-        {
-            acidWaterResource.alpha = 0.5f;
-        }else acidWaterResource.alpha = 1f;
-        var waterQuantityText = acidWaterResource.GetComponentsInChildren<TMP_Text>();
+        Vector2 randomPosition = GetRandomPosition();
 
-        waterQuantityText[1].text = $"{newWaterQuantity}";
+        if (!isCleanWaterAvailable)
+        {
+            var newWaterQuantity = ResourceManager.Instance.UpdateByName(ResourceType.AcidWater, waterValue);
+            if (newWaterQuantity == 0)
+            {
+                acidWaterResource.alpha = 0.5f;
+            }
+            else acidWaterResource.alpha = 1f;
+            var waterQuantityText = acidWaterResource.GetComponentsInChildren<TMP_Text>();
+
+            waterQuantityText[1].text = $"{newWaterQuantity}";
+
+            /////spawn the plant image randomly in the map
+            Instantiate(spawnedImagePrefab, randomPosition, Quaternion.identity, transform.parent);
+        }
+        else
+        {
+            var newWaterQuantity = ResourceManager.Instance.UpdateByName(ResourceType.CleanWater, waterValue);
+            if (newWaterQuantity == 0)
+            {
+                cleanWaterResource.alpha = 0.5f;
+            }
+            else cleanWaterResource.alpha = 1f;
+            var waterQuantityText = cleanWaterResource.GetComponentsInChildren<TMP_Text>();
+
+            waterQuantityText[1].text = $"{newWaterQuantity}";
+
+            Instantiate(treePrefab, randomPosition, Quaternion.identity, transform.parent);
+        }
 
         StartCoroutine(InfoTabHelper.Instance.ShowInfo(text));
-
-        /////spawn the plant image randomly in the map
-        Vector2 randomPosition = GetRandomPosition();
-        Instantiate(spawnedImagePrefab, randomPosition, Quaternion.identity,transform.parent);
-        
     }
 
     public void clickWindTurbineButton()
     {
         if (maxWindTurbines == 0)
         {
+            unlockWindTurbine = false;
             StartCoroutine(InfoTabHelper.Instance.ShowInfo("MAX WIND TURBINES REACHED!"));
             return;
         }
@@ -362,6 +387,7 @@ public class GameController : MonoBehaviour
     {
         if (maxSolarPanels == 0)
         {
+            unlockSolarPanel = false;
             StartCoroutine(InfoTabHelper.Instance.ShowInfo("MAX SOLAR PANELS REACHED!"));
             return;
         }
@@ -424,6 +450,7 @@ public class GameController : MonoBehaviour
     {
         if (maxWaterPlants == 0)
         {
+            unlockWaterPlant = false;
             StartCoroutine(InfoTabHelper.Instance.ShowInfo("MAX WATER PLANTS REACHED!"));
             return;
         }
@@ -490,8 +517,10 @@ public class GameController : MonoBehaviour
             cleanWaterResource.alpha = 0.5f;
         }else cleanWaterResource.alpha = 1f;
         var cleanWaterResourceTxt = cleanWaterResource.GetComponentsInChildren<TMP_Text>();
+        var cleanWaterResourceBtn = cleanWaterResource.GetComponentInChildren<Button>();
 
         cleanWaterResourceTxt[1].text = $"{newCleanWaterQtd}";
+        cleanWaterResourceBtn.interactable = true;
 
         var newAcidWaterValue = ResourceManager.Instance.UpdateByName(ResourceType.AcidWater,-newCleanWaterQtd);
         if(newAcidWaterValue == 0)
@@ -499,9 +528,12 @@ public class GameController : MonoBehaviour
             acidWaterResource.alpha = 0.5f;
         }else acidWaterResource.alpha = 1f;
         var acidWaterResourceTxt = acidWaterResource.GetComponentsInChildren<TMP_Text>();
+        var acidWaterResourceBtn = acidWaterResource.GetComponentInChildren<Button>();
 
-        acidWaterResourceTxt[1].text = $"{newAcidWaterValue}";
+        acidWaterResourceBtn.interactable = false;
+        acidWaterResourceTxt[1].text = "0";
 
+        isCleanWaterAvailable = true;
         StartCoroutine(InfoTabHelper.Instance.ShowInfo(text)); //-> only this message is shown -_-
         /////////
     }

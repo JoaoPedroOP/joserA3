@@ -23,7 +23,6 @@ public class QuizzManager : MonoBehaviour
     public int acidRainValue = 50;
     public CanvasGroup acidWaterResource;
     public Sprite acidRainBg;
-    private bool isFirstQuestion = true;
 
     private void Start()
     {
@@ -98,7 +97,7 @@ public class QuizzManager : MonoBehaviour
         showQuizzComponents(false);
 
         // Wait for 1 minute to get the next(if got right) or same(if got wrong) question
-        yield return new WaitForSeconds(25f);
+        yield return new WaitForSeconds(30f);
 
         this.generateQuestion();
     }
@@ -132,7 +131,7 @@ public class QuizzManager : MonoBehaviour
         }
     }
 
-    public IEnumerator MakeAcidRain()
+    public IEnumerator MakeAcidRain(bool isArid = true)
     {   
         //give acid Rain Resources
         // updating the acid rain quantity and enabling the resource on the manager
@@ -142,7 +141,10 @@ public class QuizzManager : MonoBehaviour
         var button = acidWaterResource.GetComponentInChildren<Button>();
         button.interactable = true;
         acidWaterQuantityText[1].text = $"{newQuantity}";
-        GameObject.Find("Panel").GetComponent<Image>().sprite = acidRainBg;
+        if(isArid)
+        {
+            GameObject.Find("Panel").GetComponent<Image>().sprite = acidRainBg;
+        }
 
         this.Rain.Play();
         // Wait for 3 seconds

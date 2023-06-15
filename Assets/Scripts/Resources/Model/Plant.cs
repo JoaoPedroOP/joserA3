@@ -10,10 +10,10 @@ public class Plant : MonoBehaviour
     private void OnMouseDown()
     {
         Destroy(smallPlant);
-        var woodValue = 1;
+        var woodValue = 5;
 
         //message appears indicating that some resources were gained
-        var text = "You gained " + woodValue + " wood!" + "\n" + "Good Luck!";
+        var text = "You gained " + woodValue + " woods!" + "\n" + "Good Luck!";
 
         woodResource.alpha = 1f;
         var newQuantity = ResourceManager.Instance.UpdateByName(ResourceType.Wood, woodValue);
