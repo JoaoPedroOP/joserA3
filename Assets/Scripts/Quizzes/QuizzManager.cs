@@ -91,6 +91,11 @@ public class QuizzManager : MonoBehaviour
 
             this.Correct();
         }
+        else
+        {
+            StartCoroutine(InfoTabHelper.Instance.ShowInfo("Oops, wrong answer! Try again!"));
+            quizz.alpha = 0f;
+        }
 
         //hide the quizz gameObject
         showQuizzComponents(false);
@@ -156,11 +161,7 @@ public class QuizzManager : MonoBehaviour
         var quantity = 50;
         //give water Resources
         // updating the water quantity and enabling the resource on the manager
-        var newQuantity = ResourceManager.Instance.UpdateByName(ResourceType.CleanWater, quantity);
-        var acidWaterQuantityText = waterResource.GetComponentsInChildren<TMP_Text>();
-        var button = waterResource.GetComponentInChildren<Button>();
-        button.interactable = true;
-        acidWaterQuantityText[1].text = $"{newQuantity}";
+        ResourceManager.Instance.UpdateByName(ResourceType.CleanWater, quantity);
         
         this.Rain.Play();
         // Wait for 3 seconds

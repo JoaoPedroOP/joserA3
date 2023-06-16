@@ -118,6 +118,10 @@ public class AnswerScript : MonoBehaviour
         {
             Debug.Log("Wrong Answer!");
             StartCoroutine(quizzManager.ShowInfoAboutQuestion(isCorrect));
+
+           // quizzManager.questionsWrong++;
+           // remove environmental points??? TODO
+
         }
     }
 }
