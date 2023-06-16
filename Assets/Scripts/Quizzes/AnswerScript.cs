@@ -44,12 +44,12 @@ public class AnswerScript : MonoBehaviour
             //30%
             if(quizzManager.questionsRight==3)
             {
+                //enable rain for some seconds
+                StartCoroutine(quizzManager.MakeAcidRain(75));
                 //enable solar panel
                 foreach (GameController controller in gameControllers)
                 {
                     controller.unlockSolarPanel = true;
-                    //enable rain for some seconds
-                    StartCoroutine(quizzManager.MakeAcidRain());
                 }
             }
 
@@ -60,6 +60,7 @@ public class AnswerScript : MonoBehaviour
                 foreach (GameController controller in gameControllers)
                 {
                     controller.unlockWaterPlant = true;
+                    controller.IsCleanWaterAvailable = true;
                 }
             }
 
@@ -71,6 +72,13 @@ public class AnswerScript : MonoBehaviour
                 {
                     controller.ChangeScenaryToGreen();
                 }
+            }
+
+            //60%
+            if (quizzManager.questionsRight == 7)
+            {
+                //enable rain for some seconds
+                StartCoroutine(quizzManager.MakeRain());
             }
 
             //80%
@@ -90,9 +98,9 @@ public class AnswerScript : MonoBehaviour
             if (quizzManager.questionsRight == 9)
             {
                 //enable fruit trees and bees
+                StartCoroutine(quizzManager.MakeBees());
                 foreach (GameController controller in gameControllers)
                 {
-                    StartCoroutine(quizzManager.MakeBees());
                     controller.unlockFruitTrees = true;
                     //enable rain for some seconds
                 }

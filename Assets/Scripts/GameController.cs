@@ -13,6 +13,7 @@ public class GameController : MonoBehaviour
     public GameObject plantations;
     public GameObject spawnedImagePrefab;
     public GameObject treePrefab;
+    public GameObject treeWithFruitPrefab;
 
     //buildings prefabs
     public GameObject windTurbinePrefab;
@@ -59,7 +60,7 @@ public class GameController : MonoBehaviour
     public Vector2[] windTurbinePositions = new Vector2[maxWindTurbines];
     public Vector2[] solarPanelsPositions = new Vector2[maxSolarPanels];
 
-    private bool isCleanWaterAvailable = false;
+    public bool IsCleanWaterAvailable = false;
 
     // Start is called before the first frame update
     void Start()
@@ -287,7 +288,7 @@ public class GameController : MonoBehaviour
 
         Vector2 randomPosition = GetRandomPosition();
 
-        if (!isCleanWaterAvailable)
+        if (!IsCleanWaterAvailable)
         {
             var newWaterQuantity = ResourceManager.Instance.UpdateByName(ResourceType.AcidWater, waterValue);
             if (newWaterQuantity == 0)
@@ -313,8 +314,14 @@ public class GameController : MonoBehaviour
             var waterQuantityText = cleanWaterResource.GetComponentsInChildren<TMP_Text>();
 
             waterQuantityText[1].text = $"{newWaterQuantity}";
-
-            Instantiate(treePrefab, randomPosition, Quaternion.identity, transform.parent);
+            if (unlockFruitTrees)
+            {
+                Instantiate(treeWithFruitPrefab, randomPosition, Quaternion.identity, transform.parent);
+            }
+            else 
+            {
+                Instantiate(treePrefab, randomPosition, Quaternion.identity, transform.parent);
+            }
         }
 
         StartCoroutine(InfoTabHelper.Instance.ShowInfo(text));
@@ -464,10 +471,10 @@ public class GameController : MonoBehaviour
 
         GameObject.Find("Panel").GetComponent<Image>().sprite = this.cleanWaterBg;
 
-        //consume 5 wood, 1 mineral and 8 energy?
+        //consume 5 wood, 1 mineral and 40 energy?
         int woodValue = -5;
         int mineralValue = -1;
-        int energyValue = -8;
+        int energyValue = -40;
 
         //message appears indicating that some resources were spent
         string text = "You Spent " + Math.Abs(woodValue) + " Wood!" + "\n"
@@ -538,8 +545,6 @@ public class GameController : MonoBehaviour
 
         acidWaterResourceBtn.interactable = false;
         acidWaterResourceTxt[1].text = "0";
-
-        isCleanWaterAvailable = true;
         StartCoroutine(InfoTabHelper.Instance.ShowInfo(text)); //-> only this message is shown -_-
         /////////
     }

@@ -20,8 +20,7 @@ public class QuizzManager : MonoBehaviour
 
     public ParticleSystem Rain;
     public ParticleSystem Bees;
-    public int acidRainValue = 50;
-    public CanvasGroup acidWaterResource;
+    public CanvasGroup waterResource;
     public Sprite acidRainBg;
 
     private void Start()
@@ -131,14 +130,14 @@ public class QuizzManager : MonoBehaviour
         }
     }
 
-    public IEnumerator MakeAcidRain(bool isArid = true)
+    public IEnumerator MakeAcidRain(int quantity = 25, bool isArid = true)
     {   
         //give acid Rain Resources
         // updating the acid rain quantity and enabling the resource on the manager
-        acidWaterResource.alpha = 1f;
-        var newQuantity = ResourceManager.Instance.UpdateByName(ResourceType.AcidWater, acidRainValue);
-        var acidWaterQuantityText = acidWaterResource.GetComponentsInChildren<TMP_Text>();
-        var button = acidWaterResource.GetComponentInChildren<Button>();
+        waterResource.alpha = 1f;
+        var newQuantity = ResourceManager.Instance.UpdateByName(ResourceType.AcidWater, quantity);
+        var acidWaterQuantityText = waterResource.GetComponentsInChildren<TMP_Text>();
+        var button = waterResource.GetComponentInChildren<Button>();
         button.interactable = true;
         acidWaterQuantityText[1].text = $"{newQuantity}";
         if(isArid)
@@ -146,6 +145,23 @@ public class QuizzManager : MonoBehaviour
             GameObject.Find("Panel").GetComponent<Image>().sprite = acidRainBg;
         }
 
+        this.Rain.Play();
+        // Wait for 3 seconds
+        yield return new WaitForSeconds(3f);
+        this.Rain.Stop();
+    }
+
+    public IEnumerator MakeRain()
+    {
+        var quantity = 50;
+        //give water Resources
+        // updating the water quantity and enabling the resource on the manager
+        var newQuantity = ResourceManager.Instance.UpdateByName(ResourceType.CleanWater, quantity);
+        var acidWaterQuantityText = waterResource.GetComponentsInChildren<TMP_Text>();
+        var button = waterResource.GetComponentInChildren<Button>();
+        button.interactable = true;
+        acidWaterQuantityText[1].text = $"{newQuantity}";
+        
         this.Rain.Play();
         // Wait for 3 seconds
         yield return new WaitForSeconds(3f);

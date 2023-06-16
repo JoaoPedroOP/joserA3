@@ -32,8 +32,7 @@ public class ResourceManager : MonoBehaviour
         new ResourceModel
         {
             Id = 4,
-            Type = ResourceType.Energy,
-            Quantity = 10
+            Type = ResourceType.Energy
         },
         new ResourceModel
         {
