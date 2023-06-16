@@ -2724,9 +2724,6 @@ MonoBehaviour:
   cleanWaterBg: {fileID: 21300000, guid: 5ec049c6c8638c34a882a9fa7c1aca46, type: 3}
   greenScenarioBg: {fileID: 21300000, guid: b320d89c14e86744b98937ebe08e5333, type: 3}
   scaleRange: {x: 1, y: 100}
-  unlockWaterPlant: 0
-  unlockSolarPanel: 0
-  unlockWindTurbine: 0
   unlockBees: 0
   unlockAnimals: 0
   unlockFruitTrees: 0
@@ -2801,9 +2798,6 @@ MonoBehaviour:
   cleanWaterBg: {fileID: 21300000, guid: 5ec049c6c8638c34a882a9fa7c1aca46, type: 3}
   greenScenarioBg: {fileID: 21300000, guid: b320d89c14e86744b98937ebe08e5333, type: 3}
   scaleRange: {x: 1, y: 100}
-  unlockWaterPlant: 0
-  unlockSolarPanel: 0
-  unlockWindTurbine: 0
   unlockBees: 0
   unlockAnimals: 0
   unlockFruitTrees: 0
@@ -4462,9 +4456,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
       propertyPath: QuestionAndAnswers.Array.data[7].Question
-      value: 'Over the period from 1970 to 2010, the global population increased
-        by more than 50 per cent. How much percentage did the wildlife population
-        decrease in the same period? '
+      value: ' How much percentage did the wildlife population decrease from 1970
+        to 2010? '
       objectReference: {fileID: 0}
     - target: {fileID: 1333959038570668734, guid: 15cea36c98882204aa1039ff4d994aff, type: 3}
       propertyPath: QuestionAndAnswers.Array.data[8].Question

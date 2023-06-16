@@ -48,9 +48,9 @@ public class GameController : MonoBehaviour
     public Vector2 scaleRange = new Vector2(1f, 100f);
 
     //unlockBuildings
-    public bool unlockWaterPlant = false;
-    public bool unlockSolarPanel = false;
-    public bool unlockWindTurbine = false;
+    public static bool unlockWaterPlant = false;
+    public static bool unlockSolarPanel = false;
+    public static bool unlockWindTurbine = false;
 
     //unlockBeesAnimalsFruitTrees
     public bool unlockBees = false;
@@ -65,6 +65,9 @@ public class GameController : MonoBehaviour
     public Vector2[] solarPanelsPositions = new Vector2[maxSolarPanels];
 
     public bool IsCleanWaterAvailable = false;
+
+    private Button windTurbineBtn;
+    private Button solarPanelBtn;
 
     // Start is called before the first frame update
     void Start()
@@ -90,9 +93,9 @@ public class GameController : MonoBehaviour
         var plantBtn = plantations.GetComponentInChildren<Button>();
         var plantBtnImage = plantBtn.GetComponentInChildren<UnityEngine.UI.Image>();
 
-        var windTurbineBtn = windTurbine.GetComponentInChildren<Button>();
+        windTurbineBtn = windTurbine.GetComponentInChildren<Button>();
 
-        var solarPanelBtn = solarPanel.GetComponentInChildren<Button>();
+        solarPanelBtn = solarPanel.GetComponentInChildren<Button>();
 
         var waterPlantBtn = waterPlant.GetComponentInChildren<Button>();
 
@@ -114,22 +117,26 @@ public class GameController : MonoBehaviour
         if (!hasWindTurbineResources())
         {
             windTurbineBtn.enabled = false;
+            windTurbineBtn.interactable = false;
             windTurbine.alpha = 0.5f;
         }
         else
         {
             windTurbineBtn.enabled = true;
+            windTurbineBtn.interactable = true;
             windTurbine.alpha = 1f;
         }
 
         if (!hasSolarPanelResources())
         {
             solarPanelBtn.enabled = false;
+            solarPanelBtn.interactable = false;
             solarPanel.alpha = 0.5f;
         }
         else
         {
             solarPanelBtn.enabled = true;
+            solarPanelBtn.interactable = true;
             solarPanel.alpha = 1f;
         }
 
@@ -335,6 +342,9 @@ public class GameController : MonoBehaviour
     {
         if (maxWindTurbines == 0)
         {
+            windTurbineBtn.enabled = false;
+            windTurbineBtn.interactable = false;
+            windTurbine.alpha = 0.5f;
             unlockWindTurbine = false;
             StartCoroutine(InfoTabHelper.Instance.ShowInfo("MAX WIND TURBINES REACHED!"));
             return;
@@ -358,7 +368,6 @@ public class GameController : MonoBehaviour
         var woodResourceText = woodResource.GetComponentsInChildren<TMP_Text>();
 
         woodResourceText[1].text = $"{newWoodQuantity}";
-
 
         //updating the mineral quantity on the manager
         var newMineralValue = ResourceManager.Instance.UpdateByName(ResourceType.Minerals, mineralValue);
@@ -400,6 +409,9 @@ public class GameController : MonoBehaviour
         if (maxSolarPanels == 0)
         {
             unlockSolarPanel = false;
+            solarPanelBtn.enabled = false;
+            solarPanelBtn.interactable = false;
+            solarPanel.alpha = 0.5f;
             StartCoroutine(InfoTabHelper.Instance.ShowInfo("MAX SOLAR PANELS REACHED!"));
             return;
         }

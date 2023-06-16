@@ -34,11 +34,8 @@ public class AnswerScript : MonoBehaviour
             //20%
             if(quizzManager.questionsRight == 2)
             {
-                foreach (GameController controller in gameControllers)
-                {
-                    //enable wind turbine
-                    controller.unlockWindTurbine = true;
-                }
+                //enable wind turbine
+                GameController.unlockWindTurbine = true;
             }
 
             //30%
@@ -47,19 +44,17 @@ public class AnswerScript : MonoBehaviour
                 //enable rain for some seconds
                 StartCoroutine(quizzManager.MakeAcidRain(75));
                 //enable solar panel
-                foreach (GameController controller in gameControllers)
-                {
-                    controller.unlockSolarPanel = true;
-                }
+                
+                GameController.unlockSolarPanel = true;
             }
 
             //50%
             if(quizzManager.questionsRight==5)
             {
+                    GameController.unlockWaterPlant = true;
                 //enable water plant
                 foreach (GameController controller in gameControllers)
                 {
-                    controller.unlockWaterPlant = true;
                     controller.IsCleanWaterAvailable = true;
                 }
             }
@@ -102,6 +97,7 @@ public class AnswerScript : MonoBehaviour
                 {
                     controller.unlockFruitTrees = true;
                     //enable rain for some seconds
+                    StartCoroutine(quizzManager.MakeRain());
                 }
             }
 
