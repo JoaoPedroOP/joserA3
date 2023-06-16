@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -25,6 +26,9 @@ public class GameController : MonoBehaviour
     public CanvasGroup solarPanel;
     public CanvasGroup waterPlant;
     public AnswerScript answerScript;
+
+    // animals
+    public List<GameObject> animals = new List<GameObject>();
 
     public Image infoTab;
     public Text infoText;
@@ -571,5 +575,13 @@ public class GameController : MonoBehaviour
         float x = UnityEngine.Random.Range(-10f, 870f); 
         float y = UnityEngine.Random.Range(0f, 470f);
         return new Vector2(x, y);
+    }
+
+    internal void MakeAnimalsAppear()
+    {
+        foreach (var animal in animals)
+        {
+            animal.SetActive(true);
+        }
     }
 }

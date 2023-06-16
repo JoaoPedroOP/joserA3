@@ -87,8 +87,7 @@ public class AnswerScript : MonoBehaviour
                 //enable animals
                 foreach (GameController controller in gameControllers)
                 {
-                    // TODO
-                    //StartCoroutine(quizzManager.MakeAnimals());
+                    controller.MakeAnimalsAppear();
                     controller.unlockBees = true;
                     controller.unlockAnimals = true;
                 }
