@@ -13,6 +13,7 @@ public class SFXPlaying : MonoBehaviour
     public AudioSource rain;
     public AudioSource correctAnswer;
     public AudioSource wrongAnswer;
+    public AudioSource runningWater;
 
     void Start()
     {
@@ -23,6 +24,7 @@ public class SFXPlaying : MonoBehaviour
         this.rain.Stop();
         this.correctAnswer.Stop();
         this.wrongAnswer.Stop();
+        this.runningWater.Stop();
     }
 
     private void Awake()
@@ -63,5 +65,10 @@ public class SFXPlaying : MonoBehaviour
     public void PlayWrongAnswer()
     {
         this.wrongAnswer.Play();
+    }
+
+    public void PlayRunningWater()
+    {
+        this.runningWater.Play();
     }
 }

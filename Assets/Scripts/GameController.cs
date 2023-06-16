@@ -473,6 +473,8 @@ public class GameController : MonoBehaviour
         }
         maxWaterPlants--;
 
+        SFXPlaying.Instance.PlayRunningWater();
+
         GameObject.Find("Panel").GetComponent<Image>().sprite = this.cleanWaterBg;
 
         //consume 5 wood, 1 mineral and 40 energy?
