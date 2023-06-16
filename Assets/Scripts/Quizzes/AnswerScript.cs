@@ -18,7 +18,7 @@ public class AnswerScript : MonoBehaviour
     {
         if (isCorrect)
         {
-            Debug.Log("Correct Answer!");
+            SFXPlaying.Instance.PlayCorrectAnswer();
 
             quizzManager.questionsRight++;
             //0.1 = 10% 
@@ -116,7 +116,7 @@ public class AnswerScript : MonoBehaviour
         }
         else
         {
-            Debug.Log("Wrong Answer!");
+            SFXPlaying.Instance.PlayWrongAnswer();
             StartCoroutine(quizzManager.ShowInfoAboutQuestion(isCorrect));
 
            // quizzManager.questionsWrong++;

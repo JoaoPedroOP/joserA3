@@ -136,7 +136,9 @@ public class QuizzManager : MonoBehaviour
     }
 
     public IEnumerator MakeAcidRain(int quantity = 25, bool isArid = true)
-    {   
+    {
+        SFXPlaying.Instance.PlayRain();
+
         //give acid Rain Resources
         // updating the acid rain quantity and enabling the resource on the manager
         waterResource.alpha = 1f;
@@ -158,6 +160,7 @@ public class QuizzManager : MonoBehaviour
 
     public IEnumerator MakeRain()
     {
+        SFXPlaying.Instance.PlayRain();
         var quantity = 50;
         //give water Resources
         // updating the water quantity and enabling the resource on the manager
@@ -171,6 +174,7 @@ public class QuizzManager : MonoBehaviour
 
     internal IEnumerator MakeBees()
     {
+        SFXPlaying.Instance.PlayBees();
         this.Bees.Play();
         // Wait for 15 seconds
         yield return new WaitForSeconds(15f);
