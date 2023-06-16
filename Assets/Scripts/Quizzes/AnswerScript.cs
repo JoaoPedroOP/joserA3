@@ -121,7 +121,6 @@ public class AnswerScript : MonoBehaviour
 
            // quizzManager.questionsWrong++;
            // remove environmental points??? TODO
-
         }
     }
 }

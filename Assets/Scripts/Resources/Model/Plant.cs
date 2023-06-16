@@ -10,6 +10,9 @@ public class Plant : MonoBehaviour
     private void OnMouseDown()
     {
         Destroy(smallPlant);
+
+        SFXPlaying.Instance.PlaySelectionClick();
+
         var woodValue = 5;
 
         //message appears indicating that some resources were gained
