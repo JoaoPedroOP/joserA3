@@ -111,6 +111,7 @@ public class QuizzManager : MonoBehaviour
         if (isEnabled)
         {
             quizz.alpha = 1f;
+            quizz.interactable = true;
         }
 
         var components = gameObject.GetComponents<Image>();
