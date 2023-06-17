@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AnswerScript : MonoBehaviour
 {
@@ -104,8 +106,8 @@ public class AnswerScript : MonoBehaviour
             //100%
             if (quizzManager.questionsRight == 10)
             {
-                //show victory panel
-                //showVictoryPanel()
+                //Victory
+                showVictoryStatus();
             }
 
             StartCoroutine(quizzManager.ShowInfoAboutQuestion(isCorrect));
@@ -118,5 +120,11 @@ public class AnswerScript : MonoBehaviour
            // quizzManager.questionsWrong++;
            // remove environmental points??? TODO
         }
+    }
+
+    private void showVictoryStatus()
+    {
+        StartCoroutine(InfoTabHelper.Instance.ShowInfo("You did it!"));
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
     }
 }
