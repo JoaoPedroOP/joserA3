@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
@@ -14,6 +15,9 @@ public class Timer : MonoBehaviour
 
     private void Start()
     {
+        //se a dificuldade for fácil 540
+        //médio é 480
+        //difícil é 420
       Being(Duration);
     }
 
@@ -37,7 +41,7 @@ public class Timer : MonoBehaviour
 
     private void OnEnd()
     {
-        print("End");
+        SceneManager.LoadScene("Defeat");
     }
 
 }

@@ -2702,7 +2702,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiFill: {fileID: 953301383}
   uiText: {fileID: 1736367589}
-  Duration: 480
+  Duration: 3
   remainingDuration: 0
 --- !u!1 &1367427386 stripped
 GameObject:
