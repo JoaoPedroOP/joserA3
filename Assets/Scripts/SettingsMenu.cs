@@ -11,4 +11,9 @@ public class SettingsMenu : MonoBehaviour
     {
         AudioMixer.SetFloat("volume", volume);
     }
+
+    public void SetTimer(int timer)
+    {
+        Timer.Duration = timer;
+    }
 }

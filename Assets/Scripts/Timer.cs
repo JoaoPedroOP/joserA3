@@ -9,7 +9,7 @@ public class Timer : MonoBehaviour
     [SerializeField] private Image uiFill;
     [SerializeField] private Text uiText;
 
-    public int Duration;
+    public static int Duration = 540;
 
     public int remainingDuration;
 
