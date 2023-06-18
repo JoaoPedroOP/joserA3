@@ -521,7 +521,7 @@ public class GameController : MonoBehaviour
         energyResourceText[1].text = $"{newEnergyQuantity}";
 
         //updating the mineral quantity on the manager
-        var newMineralValue = ResourceManager.Instance.UpdateByName(ResourceType.AcidWater, mineralValue);
+        var newMineralValue = ResourceManager.Instance.UpdateByName(ResourceType.Minerals, mineralValue);
         if (newMineralValue == 0)
         {
             mineralsResource.alpha = 0.5f;

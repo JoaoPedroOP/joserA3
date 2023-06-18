@@ -23,90 +23,61 @@ public class AnswerScript : MonoBehaviour
             SFXPlaying.Instance.PlayCorrectAnswer();
 
             quizzManager.questionsRight++;
-            //0.1 = 10% 
-            EnvConsciousnessManager.Instance.AddConsciousness(0.1f);
+            //0.1 = 10%
+            IncreaseEnvConsc(0.1f);
 
             //if the first question is correct
             if (quizzManager.questionsRight == 1)
             {
-                //enable rain for some seconds
-                StartCoroutine(quizzManager.MakeAcidRain());
+                EnableAcidRain(0);
             }
 
             //20%
             if(quizzManager.questionsRight == 2)
             {
-                //enable wind turbine
-                GameController.unlockWindTurbine = true;
+                EnableWindTurbine();
             }
 
             //30%
             if(quizzManager.questionsRight==3)
             {
-                //enable rain for some seconds
-                StartCoroutine(quizzManager.MakeAcidRain(75));
-                //enable solar panel
-                
-                GameController.unlockSolarPanel = true;
+                EnableAcidRain(75);
+                EnableSolarPanel();                
             }
 
             //50%
             if(quizzManager.questionsRight==5)
             {
-                    GameController.unlockWaterPlant = true;
-                //enable water plant
-                foreach (GameController controller in gameControllers)
-                {
-                    controller.IsCleanWaterAvailable = true;
-                }
+                UnlockWaterPlant();
             }
 
             //60%
             if (quizzManager.questionsRight == 6)
             {
-                //change scenario
-                foreach (GameController controller in gameControllers)
-                {
-                    controller.ChangeScenaryToGreen();
-                }
+                changeScenario();
             }
 
             //60%
             if (quizzManager.questionsRight == 7)
             {
-                //enable rain for some seconds
-                StartCoroutine(quizzManager.MakeRain());
+                EnableRain();
             }
 
             //80%
             if (quizzManager.questionsRight == 8)
             {
-                //enable animals
-                foreach (GameController controller in gameControllers)
-                {
-                    controller.MakeAnimalsAppear();
-                    controller.unlockBees = true;
-                    controller.unlockAnimals = true;
-                }
+                EnableAnimals();
             }
 
             //90%
             if (quizzManager.questionsRight == 9)
             {
-                //enable fruit trees and bees
-                StartCoroutine(quizzManager.MakeBees());
-                foreach (GameController controller in gameControllers)
-                {
-                    controller.unlockFruitTrees = true;
-                    //enable rain for some seconds
-                    StartCoroutine(quizzManager.MakeRain());
-                }
+                EnableFruitTreesAndBees();
             }
 
             //100%
             if (quizzManager.questionsRight == 10)
             {
-                //Victory
                 showVictoryStatus();
             }
 
@@ -119,6 +90,77 @@ public class AnswerScript : MonoBehaviour
 
            // quizzManager.questionsWrong++;
            // remove environmental points??? TODO
+        }
+    }
+
+    private void IncreaseEnvConsc(float value)
+    {
+        EnvConsciousnessManager.Instance.AddConsciousness(value);
+    }
+
+    private void EnableSolarPanel()
+    {
+       GameController.unlockSolarPanel = true;
+    }
+
+    private void EnableAcidRain(int value)
+    {
+        if (value != 0)
+        {
+            StartCoroutine(quizzManager.MakeAcidRain(value));
+        }
+        else
+        {
+            StartCoroutine(quizzManager.MakeAcidRain());
+        }
+    }
+
+    private void EnableWindTurbine()
+    {
+        GameController.unlockWindTurbine = true;
+    }
+
+    private void UnlockWaterPlant()
+    {
+        GameController.unlockWaterPlant = true;
+        //enable water plant
+        foreach (GameController controller in gameControllers)
+        {
+            controller.IsCleanWaterAvailable = true;
+        }
+    }
+
+    private void changeScenario()
+    {
+        foreach (GameController controller in gameControllers)
+        {
+            controller.ChangeScenaryToGreen();
+        }
+    }
+
+    private void EnableRain()
+    {
+        StartCoroutine(quizzManager.MakeRain());
+    }
+
+    private void EnableAnimals()
+    {
+        foreach (GameController controller in gameControllers)
+        {
+            controller.MakeAnimalsAppear();
+            controller.unlockBees = true;
+            controller.unlockAnimals = true;
+        }
+    }
+
+    private void EnableFruitTreesAndBees()
+    {
+        StartCoroutine(quizzManager.MakeBees());
+        foreach (GameController controller in gameControllers)
+        {
+            controller.unlockFruitTrees = true;
+            //enable rain for some seconds
+            StartCoroutine(quizzManager.MakeRain());
         }
     }
 
