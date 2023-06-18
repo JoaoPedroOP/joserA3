@@ -43,5 +43,4 @@ public class Timer : MonoBehaviour
     {
         SceneManager.LoadScene("Defeat");
     }
-
 }

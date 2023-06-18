@@ -2330,7 +2330,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6404255863795270525, guid: 56fe320021b10024ab702b2033b22c9c, type: 3}
       propertyPath: m_text
-      value: 10
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7306803556815038434, guid: 56fe320021b10024ab702b2033b22c9c, type: 3}
       propertyPath: m_Interactable
@@ -2702,7 +2702,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiFill: {fileID: 953301383}
   uiText: {fileID: 1736367589}
-  Duration: 3
   remainingDuration: 0
 --- !u!1 &1367427386 stripped
 GameObject:

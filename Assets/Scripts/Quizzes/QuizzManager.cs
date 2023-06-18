@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class QuizzManager : MonoBehaviour
@@ -72,13 +73,12 @@ public class QuizzManager : MonoBehaviour
         }
     }
 
-    //method to generate the next question
-    public void Correct()
+    public void GenerateNextQuestion()
     {
         QuestionAndAnswers.RemoveAt(currentQuestionIndex);
     }
 
-    public IEnumerator ShowInfoAboutQuestion(bool isCorrect)
+    public IEnumerator ShowInfoAboutQuestion(bool isCorrect, bool hasWon = false)
     {
         //hide question tab and answer buttons
         ShowquestionTabAndAnswerBtns(false);
@@ -89,12 +89,21 @@ public class QuizzManager : MonoBehaviour
             responseInformation.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text
                 = QuestionAndAnswers[index].AnswerInformation;
 
-            this.Correct();
+            this.GenerateNextQuestion();
         }
         else
         {
             StartCoroutine(InfoTabHelper.Instance.ShowInfo("Oops, wrong answer! Try again!"));
             quizz.alpha = 0f;
+        }
+
+        if (hasWon)
+        {
+            StartCoroutine(InfoTabHelper.Instance.ShowInfo("You did it!"));
+
+            // Wait 10 secs and load the victory panel
+            yield return new WaitForSeconds(10f);
+            SceneManager.LoadScene("Victory");
         }
 
         //hide the quizz gameObject

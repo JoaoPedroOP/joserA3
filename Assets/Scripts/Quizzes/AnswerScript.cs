@@ -78,7 +78,8 @@ public class AnswerScript : MonoBehaviour
             //100%
             if (quizzManager.questionsRight == 10)
             {
-                showVictoryStatus();
+                StartCoroutine(quizzManager.ShowInfoAboutQuestion(isCorrect, true));
+                return;
             }
 
             StartCoroutine(quizzManager.ShowInfoAboutQuestion(isCorrect));
@@ -87,9 +88,6 @@ public class AnswerScript : MonoBehaviour
         {
             SFXPlaying.Instance.PlayWrongAnswer();
             StartCoroutine(quizzManager.ShowInfoAboutQuestion(isCorrect));
-
-           // quizzManager.questionsWrong++;
-           // remove environmental points??? TODO
         }
     }
 
@@ -123,7 +121,7 @@ public class AnswerScript : MonoBehaviour
     private void UnlockWaterPlant()
     {
         GameController.unlockWaterPlant = true;
-        //enable water plant
+
         foreach (GameController controller in gameControllers)
         {
             controller.IsCleanWaterAvailable = true;
@@ -134,7 +132,7 @@ public class AnswerScript : MonoBehaviour
     {
         foreach (GameController controller in gameControllers)
         {
-            controller.ChangeScenaryToGreen();
+            controller.ChangeSceneryToGreen();
         }
     }
 
@@ -162,11 +160,5 @@ public class AnswerScript : MonoBehaviour
             //enable rain for some seconds
             StartCoroutine(quizzManager.MakeRain());
         }
-    }
-
-    private void showVictoryStatus()
-    {
-        StartCoroutine(InfoTabHelper.Instance.ShowInfo("You did it!"));
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
     }
 }
