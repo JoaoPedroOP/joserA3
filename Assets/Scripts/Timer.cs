@@ -18,10 +18,10 @@ public class Timer : MonoBehaviour
         //se a dificuldade for fácil 540
         //médio é 480
         //difícil é 420
-      Being(Duration);
+      SetDuration(Duration);
     }
 
-    private void Being(int Second)
+    private void SetDuration(int Second)
     {
         remainingDuration = Second;
         StartCoroutine(UpdateTimer());

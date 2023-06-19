@@ -16,6 +16,7 @@ public class MainMenu : MonoBehaviour
 
     public void GoToMenu()
     {
+        Timer.Duration = 540;
         ChangeToScene("Menu");
     }
     private void ChangeToScene(string sceneName)
